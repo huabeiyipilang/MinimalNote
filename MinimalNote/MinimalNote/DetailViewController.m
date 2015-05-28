@@ -45,6 +45,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    [_textContentView resignFirstResponder];
     [MobClick endLogPageView:@"详情页"];
 }
 
