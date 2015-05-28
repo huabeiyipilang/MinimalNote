@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "Note.h"
 #import "NoteManager.h"
+#import "MobClick.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *textContentView;
@@ -27,6 +28,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"详情页"];
     if ([self isNewMode]) {
         //新建模式
         _okButton.hidden = NO;
@@ -39,6 +41,11 @@
         _textContentView.text = mNote.content;
         _textContentView.editable = NO;
     }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"详情页"];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -11,6 +11,7 @@
 #import "Note.h"
 #import "NoteCell.h"
 #import "DetailViewController.h"
+#import "MobClick.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *noteTable;
@@ -35,14 +36,18 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self switchEditMode:NO];
     [self updateTable];
+    [MobClick beginLogPageView:@"列表页"];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:@"fresh_note_list" object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [MobClick endLogPageView:@"列表页"];
 }
 
 - (void)didReceiveMemoryWarning {

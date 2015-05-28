@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MobClick.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [MobClick startWithAppkey:@"556684a867e58e626d00228f" reportPolicy:BATCH channelId:nil];
     return YES;
 }
 

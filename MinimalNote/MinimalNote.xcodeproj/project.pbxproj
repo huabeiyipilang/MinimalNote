@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B598BE0559B759FBAF10AE5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5283EA2020802E46A41D7C9 /* libPods.a */; };
 		C37A72401B15C5540071F861 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = C37A723F1B15C5540071F861 /* UIColor+HexString.m */; };
+		C37A9A691B16C08C004DF68D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C37A9A671B16BCBB004DF68D /* libz.dylib */; };
 		C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */; };
 		C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF231AF8B48000BE2C0D /* LineTextView.m */; };
 		C3E8DD641AF7687E00329720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD631AF7687E00329720 /* main.m */; };
@@ -30,11 +31,12 @@
 		B5283EA2020802E46A41D7C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37A723E1B15C5540071F861 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexString.h"; path = "Utils/UIColor+HexString.h"; sourceTree = "<group>"; };
 		C37A723F1B15C5540071F861 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexString.m"; path = "Utils/UIColor+HexString.m"; sourceTree = "<group>"; };
+		C37A9A671B16BCBB004DF68D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C3A9EF1F1AF86FAA00BE2C0D /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C3A9EF221AF8B48000BE2C0D /* LineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTextView.h; sourceTree = "<group>"; };
 		C3A9EF231AF8B48000BE2C0D /* LineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTextView.m; sourceTree = "<group>"; };
-		C3E8DD5E1AF7687E00329720 /* MinimalNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E8DD5E1AF7687E00329720 /* MinimalNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MinimalNote.app; path = "极简笔记.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E8DD621AF7687E00329720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E8DD631AF7687E00329720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3E8DD651AF7687E00329720 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37A9A691B16C08C004DF68D /* libz.dylib in Frameworks */,
 				C3E8DD8D1AF77A3D00329720 /* libsqlite3.dylib in Frameworks */,
 				3B598BE0559B759FBAF10AE5 /* libPods.a in Frameworks */,
 			);
@@ -182,6 +185,7 @@
 		E37466CD9307D1C2DC3F5E71 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C37A9A671B16BCBB004DF68D /* libz.dylib */,
 				C3E8DD8C1AF77A3D00329720 /* libsqlite3.dylib */,
 				B5283EA2020802E46A41D7C9 /* libPods.a */,
 			);
@@ -191,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C3E8DD5D1AF7687E00329720 /* MinimalNote */ = {
+		C3E8DD5D1AF7687E00329720 /* 极简笔记 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "MinimalNote" */;
+			buildConfigurationList = C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "极简笔记" */;
 			buildPhases = (
 				62AA210A47C853AD83CA54F5 /* Check Pods Manifest.lock */,
 				C3E8DD5A1AF7687E00329720 /* Sources */,
@@ -205,7 +209,7 @@
 			);
 			dependencies = (
 			);
-			name = MinimalNote;
+			name = "极简笔记";
 			productName = MinimalNote;
 			productReference = C3E8DD5E1AF7687E00329720 /* MinimalNote.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +225,7 @@
 				TargetAttributes = {
 					C3E8DD5D1AF7687E00329720 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 89HVA8RN53;
 					};
 				};
 			};
@@ -237,7 +242,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C3E8DD5D1AF7687E00329720 /* MinimalNote */,
+				C3E8DD5D1AF7687E00329720 /* 极简笔记 */,
 			);
 		};
 /* End PBXProject section */
@@ -413,8 +418,13 @@
 			baseConfigurationReference = 649A68E34DC9CF88E6BB57C8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MinimalNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MinimalNote",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -424,8 +434,13 @@
 			baseConfigurationReference = 6AE6686FD8519C66152B8BE2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = MinimalNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MinimalNote",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -442,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "MinimalNote" */ = {
+		C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "极简笔记" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3E8DD821AF7687E00329720 /* Debug */,

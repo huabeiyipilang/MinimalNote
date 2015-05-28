@@ -4,11 +4,14 @@ PODS:
   - FMDB/common (2.5)
   - FMDB/standard (2.5):
     - FMDB/common
+  - UMengAnalytics (3.4.6)
 
 DEPENDENCIES:
   - FMDB (~> 2.5)
+  - UMengAnalytics
 
 SPEC CHECKSUMS:
   FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
+  UMengAnalytics: bc026b4f4a9a162cdf5adc0c53c5a498de7a73bb
 
 COCOAPODS: 0.35.0
