@@ -83,5 +83,6 @@
     _textContentView.editable = YES;
     _okButton.hidden = NO;
     _editButton.hidden = YES;
+    [_textContentView becomeFirstResponder];
 }
 @end

@@ -36,7 +36,7 @@
 		C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C3A9EF221AF8B48000BE2C0D /* LineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTextView.h; sourceTree = "<group>"; };
 		C3A9EF231AF8B48000BE2C0D /* LineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTextView.m; sourceTree = "<group>"; };
-		C3E8DD5E1AF7687E00329720 /* MinimalNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MinimalNote.app; path = "极简笔记.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E8DD5E1AF7687E00329720 /* MinimalNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E8DD621AF7687E00329720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E8DD631AF7687E00329720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C3E8DD651AF7687E00329720 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -195,9 +195,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C3E8DD5D1AF7687E00329720 /* 极简笔记 */ = {
+		C3E8DD5D1AF7687E00329720 /* MinimalNote */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "极简笔记" */;
+			buildConfigurationList = C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "MinimalNote" */;
 			buildPhases = (
 				62AA210A47C853AD83CA54F5 /* Check Pods Manifest.lock */,
 				C3E8DD5A1AF7687E00329720 /* Sources */,
@@ -209,7 +209,7 @@
 			);
 			dependencies = (
 			);
-			name = "极简笔记";
+			name = MinimalNote;
 			productName = MinimalNote;
 			productReference = C3E8DD5E1AF7687E00329720 /* MinimalNote.app */;
 			productType = "com.apple.product-type.application";
@@ -242,7 +242,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C3E8DD5D1AF7687E00329720 /* 极简笔记 */,
+				C3E8DD5D1AF7687E00329720 /* MinimalNote */,
 			);
 		};
 /* End PBXProject section */
@@ -419,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MinimalNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -426,6 +427,7 @@
 					"$(PROJECT_DIR)/MinimalNote",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -435,6 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MinimalNote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -442,6 +445,7 @@
 					"$(PROJECT_DIR)/MinimalNote",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -457,7 +461,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "极简笔记" */ = {
+		C3E8DD811AF7687E00329720 /* Build configuration list for PBXNativeTarget "MinimalNote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C3E8DD821AF7687E00329720 /* Debug */,

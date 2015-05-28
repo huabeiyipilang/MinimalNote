@@ -23,7 +23,7 @@
 }
 
 - (instancetype)init {
-    NoteManager* instance = [super init];
+    self = [super init];
     NSString* dbDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString* dbPath = [dbDir stringByAppendingPathComponent:@"note.db"];
     mDatabase = [FMDatabase databaseWithPath:dbPath];
@@ -34,7 +34,7 @@
         NSLog(@"Could not open db.");
     }
 
-    return instance;
+    return self;
 }
 
 
