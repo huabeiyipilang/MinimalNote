@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *textContentView;
 @property (strong, nonatomic) IBOutlet UIButton *okButton;
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
+@property (strong, nonatomic) IBOutlet UILabel *titleView;
 
 @end
 
@@ -40,6 +41,7 @@
         _editButton.hidden = NO;
         _textContentView.text = mNote.content;
         _textContentView.editable = NO;
+        _titleView.hidden = YES;
     }
 }
 
