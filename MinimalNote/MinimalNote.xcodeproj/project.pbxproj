@@ -12,6 +12,9 @@
 		C37A9A691B16C08C004DF68D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C37A9A671B16BCBB004DF68D /* libz.dylib */; };
 		C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */; };
 		C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF231AF8B48000BE2C0D /* LineTextView.m */; };
+		C3D7304B1B193E1F009CE260 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D7304A1B193E1F009CE260 /* Tag.m */; };
+		C3D7304F1B19408E009CE260 /* AddNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D7304D1B19408E009CE260 /* AddNoteCell.m */; };
+		C3D730501B19408E009CE260 /* AddNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D7304E1B19408E009CE260 /* AddNoteCell.xib */; };
 		C3E8DD641AF7687E00329720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD631AF7687E00329720 /* main.m */; };
 		C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD661AF7687E00329720 /* AppDelegate.m */; };
 		C3E8DD6A1AF7687E00329720 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD691AF7687E00329720 /* ViewController.m */; };
@@ -36,6 +39,11 @@
 		C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C3A9EF221AF8B48000BE2C0D /* LineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTextView.h; sourceTree = "<group>"; };
 		C3A9EF231AF8B48000BE2C0D /* LineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTextView.m; sourceTree = "<group>"; };
+		C3D730491B193E1F009CE260 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		C3D7304A1B193E1F009CE260 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		C3D7304C1B19408E009CE260 /* AddNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteCell.h; sourceTree = "<group>"; };
+		C3D7304D1B19408E009CE260 /* AddNoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteCell.m; sourceTree = "<group>"; };
+		C3D7304E1B19408E009CE260 /* AddNoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNoteCell.xib; sourceTree = "<group>"; };
 		C3E8DD5E1AF7687E00329720 /* MinimalNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E8DD621AF7687E00329720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E8DD631AF7687E00329720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +95,9 @@
 				C3FABE3E1AF7BCFA00574765 /* NoteCell.h */,
 				C3FABE3F1AF7BCFA00574765 /* NoteCell.m */,
 				C3FABE401AF7BCFA00574765 /* NoteCell.xib */,
+				C3D7304C1B19408E009CE260 /* AddNoteCell.h */,
+				C3D7304D1B19408E009CE260 /* AddNoteCell.m */,
+				C3D7304E1B19408E009CE260 /* AddNoteCell.xib */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -153,6 +164,8 @@
 				C3E8DD8A1AF777C900329720 /* NoteManager.m */,
 				C3FABE361AF793A400574765 /* Note.h */,
 				C3FABE371AF793A400574765 /* Note.m */,
+				C3D730491B193E1F009CE260 /* Tag.h */,
+				C3D7304A1B193E1F009CE260 /* Tag.m */,
 			);
 			name = manager;
 			sourceTree = "<group>";
@@ -253,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E8DD6D1AF7687E00329720 /* Main.storyboard in Resources */,
+				C3D730501B19408E009CE260 /* AddNoteCell.xib in Resources */,
 				C3E8DD721AF7687E00329720 /* LaunchScreen.xib in Resources */,
 				C3E8DD6F1AF7687E00329720 /* Images.xcassets in Resources */,
 				C3FABE421AF7BCFA00574765 /* NoteCell.xib in Resources */,
@@ -303,11 +317,13 @@
 				C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */,
 				C3FABE411AF7BCFA00574765 /* NoteCell.m in Sources */,
 				C37A72401B15C5540071F861 /* UIColor+HexString.m in Sources */,
+				C3D7304B1B193E1F009CE260 /* Tag.m in Sources */,
 				C3E8DD6A1AF7687E00329720 /* ViewController.m in Sources */,
 				C3E8DD8B1AF777C900329720 /* NoteManager.m in Sources */,
 				C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */,
 				C3E8DD641AF7687E00329720 /* main.m in Sources */,
 				C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */,
+				C3D7304F1B19408E009CE260 /* AddNoteCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

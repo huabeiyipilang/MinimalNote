@@ -10,13 +10,14 @@
 #import "NoteManager.h"
 #import "Note.h"
 #import "NoteCell.h"
+#import "AddNoteCell.h"
 #import "DetailViewController.h"
 #import "MobClick.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *noteTable;
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
-@property (strong, nonatomic) IBOutlet UIButton *addButton;
+@property (strong, nonatomic) IBOutlet UIButton *settingButton;
 @property (strong, nonatomic) IBOutlet UIButton *delButton;
 
 @end
@@ -77,7 +78,7 @@
 - (void)switchEditMode:(BOOL)editable{
     editMode = editable;
     
-    _addButton.hidden = editMode;
+    _settingButton.hidden = editMode;
     _delButton.hidden = !editMode;
     
     if (!editMode) {
@@ -107,44 +108,68 @@
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *reuseIdetify = @"note_cell";
-    NoteCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdetify];
-    Note* note = [notes objectAtIndex:indexPath.row];
-    if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"NoteCell" owner:self options:nil] lastObject];
-        if (itemHeight == 0) {
-            itemHeight = cell.frame.size.height;
-            _noteTable.rowHeight = itemHeight;
+    if (indexPath.section == 0) {
+        static NSString *reuseIdetify = @"add_note_cell";
+        AddNoteCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdetify];
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"AddNoteCell" owner:self options:nil] lastObject];
         }
-
+        return cell;
+    }else if(indexPath.section == 1){
+        static NSString *reuseIdetify = @"note_cell";
+        NoteCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdetify];
+        Note* note = [notes objectAtIndex:indexPath.row];
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"NoteCell" owner:self options:nil] lastObject];
+        }
+        [cell bindData:note];
+        cell.accessoryType = note.checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        
+        return cell;
     }
-    [cell bindData:note];
-    cell.accessoryType = note.checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
-    
-    return cell;
+    return nil;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return notes.count;
+    if (section == 0) {
+        return 1;
+    }else if (section == 1){
+        return notes.count;
+    }
+    return 0;
+}
+
+- (CGFloat)tableView:(UITableView *)atableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 56;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    Note* note = [notes objectAtIndex:indexPath.row];
-    if (editMode) {
-        NoteCell* cell = (NoteCell*)[tableView cellForRowAtIndexPath:indexPath];
-        if (note.checked) {
-            cell.accessoryType = UITableViewCellAccessoryNone;
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }
-        else {
-            cell.accessoryType=UITableViewCellAccessoryCheckmark;
-        }
-        note.checked = !note.checked;
-    }else{
+    if (indexPath.section == 0){
         DetailViewController* detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail_controller"];
-        [detailController showNote:note];
         [self presentViewController:detailController animated:YES completion:nil];
+    }else if (indexPath.section == 1){
+        Note* note = [notes objectAtIndex:indexPath.row];
+        if (editMode) {
+            NoteCell* cell = (NoteCell*)[tableView cellForRowAtIndexPath:indexPath];
+            if (note.checked) {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            }
+            else {
+                cell.accessoryType=UITableViewCellAccessoryCheckmark;
+            }
+            note.checked = !note.checked;
+        }else{
+            DetailViewController* detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail_controller"];
+            [detailController showNote:note];
+            [self presentViewController:detailController animated:YES completion:nil];
+        }
     }
 }
 

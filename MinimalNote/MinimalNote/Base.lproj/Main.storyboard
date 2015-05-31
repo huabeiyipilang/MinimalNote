@@ -28,12 +28,9 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbq-ut-UiN">
                                         <rect key="frame" x="337" y="27" width="30" height="30"/>
-                                        <state key="normal" title="新建">
+                                        <state key="normal" title="设置">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="m0L-40-7vp" kind="modal" id="h9v-v1-1cW"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avg-zJ-zwD">
                                         <rect key="frame" x="337" y="27" width="30" height="30"/>
@@ -65,7 +62,7 @@
                                     <constraint firstAttribute="centerX" secondItem="hb0-tg-fpn" secondAttribute="centerX" id="uvx-ow-n43"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-ny-QSE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iDp-ny-QSE">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <sections/>
@@ -86,10 +83,10 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="addButton" destination="Vbq-ut-UiN" id="vvM-mp-up9"/>
                         <outlet property="delButton" destination="avg-zJ-zwD" id="M1A-tU-NBZ"/>
                         <outlet property="editButton" destination="AN4-gc-vpl" id="Ieo-xm-nV4"/>
                         <outlet property="noteTable" destination="iDp-ny-QSE" id="tlr-ds-ddV"/>
+                        <outlet property="settingButton" destination="Vbq-ut-UiN" id="Ayf-dh-SvQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -182,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x4d-Oh-haS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662.5" y="252.5"/>
+            <point key="canvasLocation" x="680.5" y="-63.5"/>
         </scene>
     </scenes>
 </document>

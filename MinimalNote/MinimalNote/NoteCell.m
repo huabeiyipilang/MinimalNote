@@ -33,7 +33,7 @@
 - (void)bindData:(Note*)note{
     titleView.text = note.content;
     NSDateFormatter* formater = [[NSDateFormatter alloc]init];
-    [formater setDateFormat:@"yyyy//MM/dd hh:mm"];
+    [formater setDateFormat:@"yyyy/MM/dd hh:mm"];
     createTimeView.text = [formater stringFromDate:note.modify_time];
 }
 
