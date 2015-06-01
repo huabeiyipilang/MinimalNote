@@ -12,6 +12,9 @@
 		C37A9A691B16C08C004DF68D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C37A9A671B16BCBB004DF68D /* libz.dylib */; };
 		C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */; };
 		C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF231AF8B48000BE2C0D /* LineTextView.m */; };
+		C3C8238F1B1BF9AA009BB9BF /* GroupTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8238D1B1BF9AA009BB9BF /* GroupTitleView.m */; };
+		C3C823931B1C06A8009BB9BF /* AddTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C823921B1C06A8009BB9BF /* AddTagController.m */; };
+		C3C823951B1C0C37009BB9BF /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C823941B1C0C37009BB9BF /* arrow_down@2x.png */; };
 		C3D7304B1B193E1F009CE260 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D7304A1B193E1F009CE260 /* Tag.m */; };
 		C3D7304F1B19408E009CE260 /* AddNoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D7304D1B19408E009CE260 /* AddNoteCell.m */; };
 		C3D730501B19408E009CE260 /* AddNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D7304E1B19408E009CE260 /* AddNoteCell.xib */; };
@@ -22,6 +25,9 @@
 		C3D730681B1AD8BC009CE260 /* icon_title_back_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D730671B1AD8BC009CE260 /* icon_title_back_normal@2x.png */; };
 		C3D7306A1B1AD97B009CE260 /* icon_list_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D730691B1AD97B009CE260 /* icon_list_more@2x.png */; };
 		C3D7306C1B1ADF2A009CE260 /* line_title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D7306B1B1ADF2A009CE260 /* line_title@2x.png */; };
+		C3D730701B1B449B009CE260 /* TagListController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D7306F1B1B449B009CE260 /* TagListController.m */; };
+		C3D730741B1B4FF1009CE260 /* TagViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D730721B1B4FF1009CE260 /* TagViewCell.m */; };
+		C3D730751B1B4FF1009CE260 /* TagViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3D730731B1B4FF1009CE260 /* TagViewCell.xib */; };
 		C3E8DD641AF7687E00329720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD631AF7687E00329720 /* main.m */; };
 		C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD661AF7687E00329720 /* AppDelegate.m */; };
 		C3E8DD6A1AF7687E00329720 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD691AF7687E00329720 /* ViewController.m */; };
@@ -46,6 +52,11 @@
 		C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C3A9EF221AF8B48000BE2C0D /* LineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTextView.h; sourceTree = "<group>"; };
 		C3A9EF231AF8B48000BE2C0D /* LineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTextView.m; sourceTree = "<group>"; };
+		C3C8238C1B1BF9AA009BB9BF /* GroupTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTitleView.h; sourceTree = "<group>"; };
+		C3C8238D1B1BF9AA009BB9BF /* GroupTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTitleView.m; sourceTree = "<group>"; };
+		C3C823911B1C06A8009BB9BF /* AddTagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTagController.h; sourceTree = "<group>"; };
+		C3C823921B1C06A8009BB9BF /* AddTagController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTagController.m; sourceTree = "<group>"; };
+		C3C823941B1C0C37009BB9BF /* arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "arrow_down@2x.png"; path = "images/arrow_down@2x.png"; sourceTree = "<group>"; };
 		C3D730491B193E1F009CE260 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		C3D7304A1B193E1F009CE260 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		C3D7304C1B19408E009CE260 /* AddNoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteCell.h; sourceTree = "<group>"; };
@@ -60,6 +71,11 @@
 		C3D730671B1AD8BC009CE260 /* icon_title_back_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_title_back_normal@2x.png"; path = "images/icon_title_back_normal@2x.png"; sourceTree = "<group>"; };
 		C3D730691B1AD97B009CE260 /* icon_list_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_list_more@2x.png"; path = "images/icon_list_more@2x.png"; sourceTree = "<group>"; };
 		C3D7306B1B1ADF2A009CE260 /* line_title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line_title@2x.png"; path = "images/line_title@2x.png"; sourceTree = "<group>"; };
+		C3D7306E1B1B449B009CE260 /* TagListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListController.h; sourceTree = "<group>"; };
+		C3D7306F1B1B449B009CE260 /* TagListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListController.m; sourceTree = "<group>"; };
+		C3D730711B1B4FF1009CE260 /* TagViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewCell.h; sourceTree = "<group>"; };
+		C3D730721B1B4FF1009CE260 /* TagViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewCell.m; sourceTree = "<group>"; };
+		C3D730731B1B4FF1009CE260 /* TagViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagViewCell.xib; sourceTree = "<group>"; };
 		C3E8DD5E1AF7687E00329720 /* MinimalNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3E8DD621AF7687E00329720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E8DD631AF7687E00329720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -144,12 +160,29 @@
 		C3D7305E1B1AD5E1009CE260 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C3C823941B1C0C37009BB9BF /* arrow_down@2x.png */,
 				C3D7306B1B1ADF2A009CE260 /* line_title@2x.png */,
 				C3D730671B1AD8BC009CE260 /* icon_title_back_normal@2x.png */,
 				C3D730641B1AD635009CE260 /* icon_title_back_press@2x.png */,
 				C3D730691B1AD97B009CE260 /* icon_list_more@2x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		C3D7306D1B1B3DB3009CE260 /* TagList */ = {
+			isa = PBXGroup;
+			children = (
+				C3D7306E1B1B449B009CE260 /* TagListController.h */,
+				C3D7306F1B1B449B009CE260 /* TagListController.m */,
+				C3D730711B1B4FF1009CE260 /* TagViewCell.h */,
+				C3D730721B1B4FF1009CE260 /* TagViewCell.m */,
+				C3D730731B1B4FF1009CE260 /* TagViewCell.xib */,
+				C3C8238C1B1BF9AA009BB9BF /* GroupTitleView.h */,
+				C3C8238D1B1BF9AA009BB9BF /* GroupTitleView.m */,
+				C3C823911B1C06A8009BB9BF /* AddTagController.h */,
+				C3C823921B1C06A8009BB9BF /* AddTagController.m */,
+			);
+			name = TagList;
 			sourceTree = "<group>";
 		};
 		C3E8DD551AF7687E00329720 = {
@@ -212,6 +245,7 @@
 		C3E8DD881AF777AE00329720 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				C3D7306D1B1B3DB3009CE260 /* TagList */,
 				C3D730511B1ACF34009CE260 /* Setting */,
 				C3A9EF1E1AF86F2500BE2C0D /* Detail */,
 				C3A9EF1D1AF86F1800BE2C0D /* List */,
@@ -302,6 +336,8 @@
 				C3D730501B19408E009CE260 /* AddNoteCell.xib in Resources */,
 				C3E8DD721AF7687E00329720 /* LaunchScreen.xib in Resources */,
 				C3E8DD6F1AF7687E00329720 /* Images.xcassets in Resources */,
+				C3C823951B1C0C37009BB9BF /* arrow_down@2x.png in Resources */,
+				C3D730751B1B4FF1009CE260 /* TagViewCell.xib in Resources */,
 				C3D730681B1AD8BC009CE260 /* icon_title_back_normal@2x.png in Resources */,
 				C3D7305C1B1AD526009CE260 /* SettingCell.xib in Resources */,
 				C3FABE421AF7BCFA00574765 /* NoteCell.xib in Resources */,
@@ -356,14 +392,18 @@
 				C3FABE411AF7BCFA00574765 /* NoteCell.m in Sources */,
 				C37A72401B15C5540071F861 /* UIColor+HexString.m in Sources */,
 				C3D7304B1B193E1F009CE260 /* Tag.m in Sources */,
+				C3C8238F1B1BF9AA009BB9BF /* GroupTitleView.m in Sources */,
 				C3E8DD6A1AF7687E00329720 /* ViewController.m in Sources */,
 				C3E8DD8B1AF777C900329720 /* NoteManager.m in Sources */,
 				C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */,
 				C3E8DD641AF7687E00329720 /* main.m in Sources */,
 				C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */,
+				C3D730701B1B449B009CE260 /* TagListController.m in Sources */,
 				C3D7305B1B1AD526009CE260 /* SettingCell.m in Sources */,
 				C3D7304F1B19408E009CE260 /* AddNoteCell.m in Sources */,
 				C3D730571B1AD1E7009CE260 /* SettingViewController.m in Sources */,
+				C3C823931B1C06A8009BB9BF /* AddTagController.m in Sources */,
+				C3D730741B1B4FF1009CE260 /* TagViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

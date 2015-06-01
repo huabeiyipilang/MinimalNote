@@ -31,8 +31,9 @@
         NSString* noteSql = @"CREATE TABLE Note (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,title text,content text,create_time integer,modify_time integer,tag text);";
         [self excuteUpdate:noteSql];
         
-        NSString* tagSql = @"CREATE TABLE Tag (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text,color text);";
+        NSString* tagSql = @"CREATE TABLE Tag (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text,color text, isdefault integer(1));";
         [self excuteUpdate:tagSql];
+        [self initTagData];
     }else{
         NSLog(@"Could not open db.");
     }
@@ -81,18 +82,53 @@
 
 #pragma mark - Tag
 - (BOOL)addTag:(Tag*) tag{
-    NSString* sql = [NSString stringWithFormat:@"INSERT INTO Tag (name, color) VALUES (\"%@\", \"%@\")", tag.name, tag.color];
+    NSString* sql = [NSString stringWithFormat:@"INSERT INTO Tag (name, color, isdefault) VALUES (\"%@\", \"%@\", %d)", tag.name, tag.color, tag.isDefault ? 1 : 0];
     return [self excuteUpdate:sql];
 }
 
 - (BOOL)updateTag:(Tag*) tag{
-    NSString* sql = [NSString stringWithFormat:@"update Tag set name=\"%@\", color=\"%@\"", tag.name, tag.color];
+    NSString* sql = [NSString stringWithFormat:@"update Tag set name=\"%@\", color=\"%@\", isdefault=%d", tag.name, tag.color, tag.isDefault ? 1 : 0];
     return [self excuteUpdate:sql];
 }
 
 - (BOOL)deleteTag:(Tag*) tag{
     NSString* sql = [NSString stringWithFormat:@"delete from Tag where id = %ld", (long)tag.nid];
     return [self excuteUpdate:sql];
+}
+
+- (NSMutableArray*)getAllTags{
+    NSString* sql = @"select * from Tag";
+    FMResultSet* result = [mDatabase executeQuery:sql];
+    NSMutableArray* tags = [NSMutableArray new];
+    Tag* tag = nil;
+    while ([result next]) {
+        tag = [Tag new];
+        tag.nid = [result intForColumn:@"id"];
+        tag.name = [result stringForColumn:@"name"];
+        tag.color = [result stringForColumn:@"color"];
+        tag.isDefault = [result intForColumn:@"isdefault"] == 1 ? YES : NO;
+        [tags addObject:tag];
+    }
+    return tags;
+}
+
+- (void)initTagData{
+    BOOL inited = [[NSUserDefaults standardUserDefaults] boolForKey:@"init_tags"];
+    if (!inited) {
+        Tag* tag = [Tag new];
+        
+        tag.name = @"工作";
+        tag.color = @"#218bed";
+        tag.isDefault = YES;
+        [self addTag:tag];
+        
+        tag.name = @"生活";
+        tag.color = @"#56ba38";
+        tag.isDefault = YES;
+        [self addTag:tag];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"init_tags"];
+    }
 }
 
 #pragma mark -

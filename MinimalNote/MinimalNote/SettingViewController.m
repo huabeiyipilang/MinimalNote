@@ -8,6 +8,7 @@
 
 #import "SettingViewController.h"
 #import "SettingCell.h"
+#import "TagListController.h"
 
 @interface SettingViewController ()
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
@@ -99,7 +100,25 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    switch (indexPath.section) {
+        case 0:
+            switch (indexPath.row) {
+                case 0:
+                    [self openController:@"tag_controller"];
+                    return;
+            }
+            break;
+        case 1:
+            switch (indexPath.row) {
+                case 0:
+                    return;
+            }
+    }
+}
+
+- (void)openController:(NSString*)controllerId{
+    UIViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:controllerId];
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

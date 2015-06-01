@@ -12,5 +12,6 @@
 @property NSInteger nid;
 @property NSString* name;
 @property NSString* color;
+@property BOOL isDefault;
 
 @end
