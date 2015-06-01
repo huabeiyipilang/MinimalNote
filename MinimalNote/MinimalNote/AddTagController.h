@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Tag.h"
 
-@interface AddTagController : UIViewController
+@interface AddTagController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 - (void)setTag:(Tag*) tag;
 @end

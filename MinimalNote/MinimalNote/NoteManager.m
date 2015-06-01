@@ -87,7 +87,7 @@
 }
 
 - (BOOL)updateTag:(Tag*) tag{
-    NSString* sql = [NSString stringWithFormat:@"update Tag set name=\"%@\", color=\"%@\", isdefault=%d", tag.name, tag.color, tag.isDefault ? 1 : 0];
+    NSString* sql = [NSString stringWithFormat:@"update Tag set name=\"%@\", color=\"%@\", isdefault=%d where id=%ld", tag.name, tag.color, tag.isDefault ? 1 : 0, tag.nid];
     return [self excuteUpdate:sql];
 }
 
