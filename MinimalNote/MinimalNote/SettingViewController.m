@@ -34,9 +34,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)onBackButtonClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *) indexPath{
@@ -109,7 +106,7 @@
         case 0:
             switch (indexPath.row) {
                 case 0:
-                    [self openController:@"tag_controller"];
+                    [self openWithStoryboardId:@"tag_controller"];
                     return;
             }
             break;
@@ -119,11 +116,6 @@
                     return;
             }
     }
-}
-
-- (void)openController:(NSString*)controllerId{
-    UIViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:controllerId];
-    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

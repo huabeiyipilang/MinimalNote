@@ -41,10 +41,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onBackClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (void)updateData{
     tags = [noteManager getAllTags];
     defaultCount = 0;
@@ -126,16 +122,13 @@
             //编辑标签
             [controller setTag:[tags objectAtIndex:index]];
         }
-        [self presentViewController:controller animated:YES completion:nil];
+        [self openController:controller];
     }
 }
 
 - (UIEdgeInsets)sectionInset
 {
     return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-
-- (void)openController:(NSString*)controllerId{
 }
 
 @end

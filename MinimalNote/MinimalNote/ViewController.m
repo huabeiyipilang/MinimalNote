@@ -34,6 +34,8 @@
     noteManager = [NoteManager sharedInstance];
     _noteTable.dataSource = self;
     _noteTable.delegate = self;
+    
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -152,7 +154,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0){
         DetailViewController* detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail_controller"];
-        [self presentViewController:detailController animated:YES completion:nil];
+        [self openController:detailController];
     }else if (indexPath.section == 1){
         Note* note = [notes objectAtIndex:indexPath.row];
         if (editMode) {
@@ -168,7 +170,7 @@
         }else{
             DetailViewController* detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail_controller"];
             [detailController showNote:note];
-            [self presentViewController:detailController animated:YES completion:nil];
+            [self openController:detailController];
         }
     }
 }

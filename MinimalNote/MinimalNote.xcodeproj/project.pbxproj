@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3B598BE0559B759FBAF10AE5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5283EA2020802E46A41D7C9 /* libPods.a */; };
+		C36DB2051B1D5C440067CD00 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DB2041B1D5C440067CD00 /* BaseViewController.m */; };
+		C36DB2081B1D5C680067CD00 /* BaseHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DB2071B1D5C680067CD00 /* BaseHeader.m */; };
+		C36DB20B1B1D8BEE0067CD00 /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C36DB20A1B1D8BEE0067CD00 /* MainNavigationController.m */; };
 		C37A72401B15C5540071F861 /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = C37A723F1B15C5540071F861 /* UIColor+HexString.m */; };
 		C37A9A691B16C08C004DF68D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C37A9A671B16BCBB004DF68D /* libz.dylib */; };
 		C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */; };
@@ -48,6 +51,12 @@
 		649A68E34DC9CF88E6BB57C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AE6686FD8519C66152B8BE2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B5283EA2020802E46A41D7C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36DB2031B1D5C440067CD00 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = Base/BaseViewController.h; sourceTree = "<group>"; };
+		C36DB2041B1D5C440067CD00 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = Base/BaseViewController.m; sourceTree = "<group>"; };
+		C36DB2061B1D5C680067CD00 /* BaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHeader.h; sourceTree = "<group>"; };
+		C36DB2071B1D5C680067CD00 /* BaseHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHeader.m; sourceTree = "<group>"; };
+		C36DB2091B1D8BEE0067CD00 /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		C36DB20A1B1D8BEE0067CD00 /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		C37A723E1B15C5540071F861 /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexString.h"; path = "Utils/UIColor+HexString.h"; sourceTree = "<group>"; };
 		C37A723F1B15C5540071F861 /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexString.m"; path = "Utils/UIColor+HexString.m"; sourceTree = "<group>"; };
 		C37A9A671B16BCBB004DF68D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -117,6 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C36DB1FD1B1D5B6C0067CD00 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C36DB2031B1D5C440067CD00 /* BaseViewController.h */,
+				C36DB2041B1D5C440067CD00 /* BaseViewController.m */,
+				C36DB2061B1D5C680067CD00 /* BaseHeader.h */,
+				C36DB2071B1D5C680067CD00 /* BaseHeader.m */,
+				C36DB2091B1D8BEE0067CD00 /* MainNavigationController.h */,
+				C36DB20A1B1D8BEE0067CD00 /* MainNavigationController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		C37A723D1B15C5440071F861 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +238,7 @@
 		C3E8DD601AF7687E00329720 /* MinimalNote */ = {
 			isa = PBXGroup;
 			children = (
+				C36DB1FD1B1D5B6C0067CD00 /* Base */,
 				C37A723D1B15C5440071F861 /* Utils */,
 				C3E8DD881AF777AE00329720 /* ui */,
 				C3E8DD871AF777A400329720 /* manager */,
@@ -400,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36DB2051B1D5C440067CD00 /* BaseViewController.m in Sources */,
 				C3FABE381AF793A400574765 /* Note.m in Sources */,
 				C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */,
 				C3FABE411AF7BCFA00574765 /* NoteCell.m in Sources */,
@@ -410,6 +434,7 @@
 				C3E8DD6A1AF7687E00329720 /* ViewController.m in Sources */,
 				C3E8DD8B1AF777C900329720 /* NoteManager.m in Sources */,
 				C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */,
+				C36DB20B1B1D8BEE0067CD00 /* MainNavigationController.m in Sources */,
 				C3E8DD641AF7687E00329720 /* main.m in Sources */,
 				C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */,
 				C3D730701B1B449B009CE260 /* TagListController.m in Sources */,
@@ -418,6 +443,7 @@
 				C3D730571B1AD1E7009CE260 /* SettingViewController.m in Sources */,
 				C3C823931B1C06A8009BB9BF /* AddTagController.m in Sources */,
 				C3D730741B1B4FF1009CE260 /* TagViewCell.m in Sources */,
+				C36DB2081B1D5C680067CD00 /* BaseHeader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

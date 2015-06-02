@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "Note.h"
+#import "BaseHeader.h"
 
-@interface DetailViewController : ViewController
+@interface DetailViewController : BaseViewController
 - (void)showNote:(Note*)note;
 @end

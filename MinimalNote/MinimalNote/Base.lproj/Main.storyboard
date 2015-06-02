@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ri5-wv-8uj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -32,7 +32,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="z42-0u-3o2" kind="show" id="RXc-iy-QMQ"/>
+                                            <segue destination="z42-0u-3o2" kind="push" id="xHj-hp-xL0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avg-zJ-zwD">
@@ -87,6 +87,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="rKF-Ey-5KE"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -118,7 +119,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="设置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3p-6G-C2s">
-                                        <rect key="frame" x="170" y="31" width="34" height="21"/>
+                                        <rect key="frame" x="171" y="31" width="34" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -130,7 +131,7 @@
                                         </state>
                                         <state key="highlighted" image="icon_title_back_press.png"/>
                                         <connections>
-                                            <action selector="onBackButtonClick:" destination="z42-0u-3o2" eventType="touchUpInside" id="CT5-sL-Ecv"/>
+                                            <action selector="closeController" destination="z42-0u-3o2" eventType="touchUpInside" id="W5T-Xa-v1n"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="line_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="nls-Qb-pFt">
@@ -163,6 +164,7 @@
                             <constraint firstItem="pW5-5Y-S9V" firstAttribute="leading" secondItem="taE-1X-EQ2" secondAttribute="leadingMargin" constant="-16" id="so5-zy-c9Y"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CFZ-Me-u5U"/>
                     <connections>
                         <outlet property="backButton" destination="Myo-t5-pzl" id="lHJ-Ik-qrD"/>
                         <outlet property="tableView" destination="pW5-5Y-S9V" id="fpu-50-cee"/>
@@ -171,6 +173,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epP-fM-9Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253.5" y="232.5"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="SoH-8a-ZQN">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Ri5-wv-8uj" customClass="MainNavigationController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DYh-vU-Ouc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Fo3-Wn-Tod"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KM9-Nr-PS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-854.5" y="232.5"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="KZa-2d-ddY">
@@ -206,7 +225,7 @@
                                         </state>
                                         <state key="highlighted" image="icon_title_back_press.png"/>
                                         <connections>
-                                            <action selector="backClicked:" destination="m0L-40-7vp" eventType="touchUpInside" id="AOa-Xp-nT8"/>
+                                            <action selector="closeController" destination="m0L-40-7vp" eventType="touchUpInside" id="o4Z-4A-erk"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-WY-Fk8">
@@ -290,8 +309,7 @@
                                         </state>
                                         <state key="highlighted" image="icon_title_back_press.png"/>
                                         <connections>
-                                            <action selector="onBackButtonClick:" destination="z42-0u-3o2" eventType="touchUpInside" id="Jx4-ac-qqt"/>
-                                            <action selector="onBackClick:" destination="who-Hh-3Nt" eventType="touchUpInside" id="wXu-sj-6Ke"/>
+                                            <action selector="closeController" destination="who-Hh-3Nt" eventType="touchUpInside" id="QzF-qw-PeB"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="line_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="frZ-G7-bJ3">
@@ -336,7 +354,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="GroupTitleView" reuseIdentifier="GroupTitleView" id="fst-hi-BOt" customClass="GroupTitleView">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SP9-6P-vl9">
@@ -391,9 +409,7 @@
                                         </state>
                                         <state key="highlighted" image="icon_title_back_press.png"/>
                                         <connections>
-                                            <action selector="onBackButtonClick:" destination="z42-0u-3o2" eventType="touchUpInside" id="ddU-ou-0HS"/>
-                                            <action selector="onBackClick:" destination="who-Hh-3Nt" eventType="touchUpInside" id="7Wp-EU-I4w"/>
-                                            <action selector="onBackClick:" destination="iMg-Lm-flS" eventType="touchUpInside" id="fgb-mK-iLt"/>
+                                            <action selector="closeController" destination="iMg-Lm-flS" eventType="touchUpInside" id="QD5-Ia-bd1"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9G-i0-XnD">
@@ -517,6 +533,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="colorArrowView" destination="yLE-Zh-IDD" id="lJY-pr-nbu"/>
                         <outlet property="colorsTableView" destination="sTf-eI-yLe" id="jnH-br-TPp"/>
                         <outlet property="delButton" destination="t9G-i0-XnD" id="e1I-vL-V0Q"/>
                         <outlet property="displayTempView" destination="ZCM-Ul-BRz" id="zCD-Rg-n8i"/>

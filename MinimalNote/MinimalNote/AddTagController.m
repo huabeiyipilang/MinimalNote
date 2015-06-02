@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *notificationView;
 @property (strong, nonatomic) IBOutlet UIButton *delButton;
 @property (strong, nonatomic) IBOutlet UITableView *colorsTableView;
+@property (strong, nonatomic) IBOutlet UIImageView *colorArrowView;
 
 @end
 
@@ -63,11 +64,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-- (IBAction)onBackClick:(id)sender {
-    [self onClose];
-}
-
 
 - (void)setTag:(Tag*) tag{
     mTag = tag;
@@ -133,7 +129,7 @@
 
 - (void)onClose{
     [_tagTitleView resignFirstResponder];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self closeController];
 }
 
 - (void)onColorViewClick:(id)sender{
@@ -141,8 +137,10 @@
     if (_colorsTableView.hidden) {
         [_colorsTableView reloadData];
         _colorsTableView.hidden = NO;
+        _colorArrowView.image = [UIImage imageNamed:@"arrow_up"];
     }else{
         _colorsTableView.hidden = YES;
+        _colorArrowView.image = [UIImage imageNamed:@"arrow_down"];
     }
 }
 

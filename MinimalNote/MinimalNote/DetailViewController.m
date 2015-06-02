@@ -75,11 +75,7 @@
         [[NoteManager sharedInstance] updateNote:mNote];
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"fresh_note_list" object:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)backClicked:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self closeController];
 }
 
 - (IBAction)editClick:(id)sender {

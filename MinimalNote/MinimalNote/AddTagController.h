@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Tag.h"
+#import "BaseHeader.h"
 
-@interface AddTagController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface AddTagController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
 - (void)setTag:(Tag*) tag;
 @end
