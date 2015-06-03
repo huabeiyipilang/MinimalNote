@@ -13,21 +13,11 @@
     
     IBOutlet UILabel *titleView;
     IBOutlet UILabel *createTimeView;
-    IBOutlet UIView *checkedView;
+    IBOutlet UIView *tagColorView;
 }
 
 - (void)awakeFromNib {
     // Initialization code
-}
-
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
-    [super setEditing:editing animated:animated];
-    checkedView.hidden = !editing;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    checkedView.backgroundColor = selected ? [UIColor colorWithHexString:@"#218bee"] : [UIColor colorWithHexString:@"#cad0d5"];
 }
 
 - (void)bindData:(Note*)note{
@@ -35,6 +25,7 @@
     NSDateFormatter* formater = [[NSDateFormatter alloc]init];
     [formater setDateFormat:@"yyyy/MM/dd hh:mm"];
     createTimeView.text = [formater stringFromDate:note.modify_time];
+    tagColorView.backgroundColor = [UIColor colorWithHexString:[note getTag].color];
 }
 
 @end

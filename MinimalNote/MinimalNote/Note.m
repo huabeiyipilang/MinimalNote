@@ -7,7 +7,17 @@
 //
 
 #import "Note.h"
+#import "NoteManager.h"
 
-@implementation Note
+@implementation Note{
+    Tag* mTag;
+}
+
+- (Tag*)getTag{
+    if (!mTag || mTag.nid != _tag) {
+        mTag = [[NoteManager sharedInstance] getTagById:_tag];
+    }
+    return mTag;
+}
 
 @end

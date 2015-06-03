@@ -20,5 +20,6 @@
 - (BOOL)addTag:(Tag*) tag;
 - (BOOL)updateTag:(Tag*) tag;
 - (BOOL)deleteTag:(Tag*) tag;
+- (Tag*)getTagById:(NSInteger)tagId;
 - (NSMutableArray*)getAllTags;
 @end

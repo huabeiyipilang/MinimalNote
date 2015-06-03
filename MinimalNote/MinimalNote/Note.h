@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Tag.h"
 
 @interface Note : NSObject
 @property NSInteger nid;
@@ -15,6 +16,9 @@
 @property NSDate* create_time;
 @property NSDate* modify_time;
 @property BOOL deleted;
+@property NSInteger tag;
 
 @property BOOL checked;
+
+- (Tag*)getTag;
 @end

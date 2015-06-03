@@ -17,17 +17,24 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqB-OM-A5P">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-hG-0Cj">
-                                <rect key="frame" x="8" y="0.0" width="312" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-hG-0Cj">
+                                <rect key="frame" x="16" y="0.0" width="304" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="F1p-yA-xlH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-Da-vXS" userLabel="Checked View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-Da-vXS" userLabel="TagColorView">
                                 <rect key="frame" x="0.0" y="0.0" width="8" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="6PR-Uc-RN3"/>
+                                    <constraint firstAttribute="width" constant="8" id="oWW-YO-uOp"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="2015-05-04" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-ED-ljg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2015-05-04" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-ED-ljg">
                                 <rect key="frame" x="8" y="44" width="304" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,12 +42,14 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="aUb-hG-0Cj" secondAttribute="trailing" id="3Sr-EG-85w"/>
-                            <constraint firstItem="aUb-hG-0Cj" firstAttribute="top" secondItem="IqB-OM-A5P" secondAttribute="top" id="AD8-Hg-hbD"/>
+                            <constraint firstItem="Cmh-Da-vXS" firstAttribute="leading" secondItem="IqB-OM-A5P" secondAttribute="leading" id="572-nB-cU7"/>
+                            <constraint firstAttribute="trailing" secondItem="aUb-hG-0Cj" secondAttribute="trailing" id="Bez-nl-uVn"/>
+                            <constraint firstItem="aUb-hG-0Cj" firstAttribute="leading" secondItem="Cmh-Da-vXS" secondAttribute="trailing" constant="8" id="LEr-4R-wYw"/>
                             <constraint firstAttribute="trailing" secondItem="5yc-ED-ljg" secondAttribute="trailing" constant="8" id="O5q-m4-rEp"/>
+                            <constraint firstAttribute="bottom" secondItem="Cmh-Da-vXS" secondAttribute="bottom" id="RAp-GE-3hH"/>
+                            <constraint firstItem="aUb-hG-0Cj" firstAttribute="top" secondItem="IqB-OM-A5P" secondAttribute="top" id="XV3-9q-SS3"/>
                             <constraint firstAttribute="bottom" secondItem="5yc-ED-ljg" secondAttribute="bottom" id="c9P-lK-9Aw"/>
-                            <constraint firstItem="5yc-ED-ljg" firstAttribute="top" secondItem="aUb-hG-0Cj" secondAttribute="bottom" id="mKU-b4-NDQ"/>
-                            <constraint firstItem="aUb-hG-0Cj" firstAttribute="leading" secondItem="IqB-OM-A5P" secondAttribute="leading" constant="8" id="rBv-Zr-4hL"/>
+                            <constraint firstItem="Cmh-Da-vXS" firstAttribute="top" secondItem="IqB-OM-A5P" secondAttribute="top" id="iaL-cz-xiu"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -52,8 +61,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="checkedView" destination="Cmh-Da-vXS" id="MwH-8R-r99"/>
                 <outlet property="createTimeView" destination="5yc-ED-ljg" id="N4D-Wx-hsw"/>
+                <outlet property="tagColorView" destination="Cmh-Da-vXS" id="Ug9-MP-o5y"/>
                 <outlet property="titleView" destination="aUb-hG-0Cj" id="XyG-Lt-qzo"/>
             </connections>
             <point key="canvasLocation" x="163" y="338.5"/>

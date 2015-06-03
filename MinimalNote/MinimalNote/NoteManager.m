@@ -28,7 +28,7 @@
     NSString* dbPath = [dbDir stringByAppendingPathComponent:@"note.db"];
     mDatabase = [FMDatabase databaseWithPath:dbPath];
     if ([mDatabase open]) {
-        NSString* noteSql = @"CREATE TABLE Note (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,title text,content text,create_time integer,modify_time integer,tag text);";
+        NSString* noteSql = @"CREATE TABLE Note (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,title text,content text,create_time integer,modify_time integer,tag integer);";
         [self excuteUpdate:noteSql];
         
         NSString* tagSql = @"CREATE TABLE Tag (id integer PRIMARY KEY AUTOINCREMENT NOT NULL,name text,color text, isdefault integer(1));";
@@ -44,12 +44,12 @@
 #pragma mark - Note
 - (BOOL)addNote:(Note*) note{
     NSTimeInterval time = [NSDate date].timeIntervalSince1970;
-    NSString* sql = [NSString stringWithFormat:@"INSERT INTO Note (title, content, create_time, modify_time) VALUES (\"%@\", \"%@\", %f, %f)", note.title, note.content, time, time];
+    NSString* sql = [NSString stringWithFormat:@"INSERT INTO Note (title, content, create_time, modify_time, tag) VALUES (\"%@\", \"%@\", %f, %f, %ld)", note.title, note.content, time, time, note.tag];
     return [self excuteUpdate:sql];
 }
 
 - (BOOL)updateNote:(Note*) note{
-    NSString* sql = [NSString stringWithFormat:@"update Note set title=\"%@\", content=\"%@\", modify_time=%f where id=%ld", note.title, note.content, [NSDate date].timeIntervalSince1970, (long)note.nid];
+    NSString* sql = [NSString stringWithFormat:@"update Note set title=\"%@\", content=\"%@\", modify_time=%f, tag=%ld where id=%ld", note.title, note.content, [NSDate date].timeIntervalSince1970, note.tag, (long)note.nid];
     return [self excuteUpdate:sql];
 }
 
@@ -74,6 +74,7 @@
         note.content = [result stringForColumn:@"content"];
         note.create_time = [[NSDate alloc] initWithTimeIntervalSince1970:[result doubleForColumn:@"create_time"]];
         note.modify_time = [[NSDate alloc] initWithTimeIntervalSince1970:[result doubleForColumn:@"modify_time"]];
+        note.tag = [result intForColumn:@"tag"];
         [notes addObject:note];
     }
     
@@ -110,6 +111,22 @@
         [tags addObject:tag];
     }
     return tags;
+}
+
+- (Tag*)getTagById:(NSInteger)tagId{
+    NSString* sql = [NSString stringWithFormat:@"select * from Tag where id = %ld", tagId];
+    
+    FMResultSet* result = [mDatabase executeQuery:sql];
+    Tag* tag = nil;
+    while ([result next]) {
+        tag = [Tag new];
+        tag.nid = [result intForColumn:@"id"];
+        tag.name = [result stringForColumn:@"name"];
+        tag.color = [result stringForColumn:@"color"];
+        tag.isDefault = [result intForColumn:@"isdefault"] == 1 ? YES : NO;
+        break;
+    }
+    return tag;
 }
 
 - (void)initTagData{
