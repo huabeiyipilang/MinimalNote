@@ -87,6 +87,7 @@
         [self deselectAll];
     }
     [self updateEditButton];
+    [self updateTable];
 }
 
 - (void)updateEditButton{
