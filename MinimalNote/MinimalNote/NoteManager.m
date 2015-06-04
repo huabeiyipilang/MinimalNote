@@ -136,37 +136,37 @@
         Tag* tag = [Tag new];
         
         tag.name = @"工作";
-        tag.color = @"#218bed";
+        tag.color = @"#0099FF";
         tag.isDefault = YES;
         [self addTag:tag];
         
         tag.name = @"生活";
-        tag.color = @"#56ba38";
+        tag.color = @"#FF6666";
         tag.isDefault = YES;
         [self addTag:tag];
         
         tag.name = @"学习";
-        tag.color = @"#56ba38";
+        tag.color = @"#99CC33";
         tag.isDefault = YES;
         [self addTag:tag];
         
         tag.name = @"衣";
-        tag.color = @"#56ba38";
+        tag.color = @"#FFCC00";
         tag.isDefault = NO;
         [self addTag:tag];
         
         tag.name = @"食";
-        tag.color = @"#56ba38";
+        tag.color = @"#009966";
         tag.isDefault = NO;
         [self addTag:tag];
         
         tag.name = @"住";
-        tag.color = @"#56ba38";
+        tag.color = @"#99CCFF";
         tag.isDefault = NO;
         [self addTag:tag];
         
         tag.name = @"行";
-        tag.color = @"#56ba38";
+        tag.color = @"#336699";
         tag.isDefault = NO;
         [self addTag:tag];
         
