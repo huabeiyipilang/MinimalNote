@@ -113,6 +113,7 @@
         case 1:
             switch (indexPath.row) {
                 case 0:
+                    [self openWithStoryboardId:@"about_controller"];
                     return;
             }
     }

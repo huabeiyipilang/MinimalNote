@@ -145,6 +145,31 @@
         tag.isDefault = YES;
         [self addTag:tag];
         
+        tag.name = @"学习";
+        tag.color = @"#56ba38";
+        tag.isDefault = YES;
+        [self addTag:tag];
+        
+        tag.name = @"衣";
+        tag.color = @"#56ba38";
+        tag.isDefault = NO;
+        [self addTag:tag];
+        
+        tag.name = @"食";
+        tag.color = @"#56ba38";
+        tag.isDefault = NO;
+        [self addTag:tag];
+        
+        tag.name = @"住";
+        tag.color = @"#56ba38";
+        tag.isDefault = NO;
+        [self addTag:tag];
+        
+        tag.name = @"行";
+        tag.color = @"#56ba38";
+        tag.isDefault = NO;
+        [self addTag:tag];
+        
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"init_tags"];
     }
 }

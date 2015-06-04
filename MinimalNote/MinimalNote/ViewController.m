@@ -126,7 +126,7 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"NoteCell" owner:self options:nil] lastObject];
         }
         [cell bindData:note];
-        cell.accessoryType = note.checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+        [cell setCheckMode:editMode];
         
         return cell;
     }
@@ -160,20 +160,15 @@
         Note* note = [notes objectAtIndex:indexPath.row];
         if (editMode) {
             NoteCell* cell = (NoteCell*)[tableView cellForRowAtIndexPath:indexPath];
-            if (note.checked) {
-                cell.accessoryType = UITableViewCellAccessoryNone;
-                [tableView deselectRowAtIndexPath:indexPath animated:YES];
-            }
-            else {
-                cell.accessoryType=UITableViewCellAccessoryCheckmark;
-            }
             note.checked = !note.checked;
+            [cell setChecked:note.checked];
         }else{
             DetailViewController* detailController = [self.storyboard instantiateViewControllerWithIdentifier:@"detail_controller"];
             [detailController showNote:note];
             [self openController:detailController];
         }
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 @end

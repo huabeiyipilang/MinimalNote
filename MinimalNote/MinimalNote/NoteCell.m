@@ -14,10 +14,21 @@
     IBOutlet UILabel *titleView;
     IBOutlet UILabel *createTimeView;
     IBOutlet UIView *tagColorView;
+    IBOutlet UIImageView *checkView;
+    BOOL mCheckMode;
 }
 
 - (void)awakeFromNib {
     // Initialization code
+}
+
+- (void)setCheckMode:(BOOL)checkMode{
+    mCheckMode = checkMode;
+    checkView.hidden = !mCheckMode;
+}
+
+- (void)setChecked:(BOOL)checked{
+    [checkView setImage:[UIImage imageNamed:checked ? @"icon_checked" : @"icon_unchecked"]];
 }
 
 - (void)bindData:(Note*)note{
@@ -26,6 +37,7 @@
     [formater setDateFormat:@"yyyy/MM/dd hh:mm"];
     createTimeView.text = [formater stringFromDate:note.modify_time];
     tagColorView.backgroundColor = [UIColor colorWithHexString:[note getTag].color];
+    [checkView setImage:[UIImage imageNamed:note.checked ? @"icon_checked" : @"icon_unchecked"]];
 }
 
 @end

@@ -11,4 +11,6 @@
 
 @interface NoteCell : UITableViewCell
 - (void)bindData:(Note*)note;
+- (void)setCheckMode:(BOOL)checkMode;
+- (void)setChecked:(BOOL)checked;
 @end

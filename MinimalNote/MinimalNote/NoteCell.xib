@@ -40,15 +40,20 @@
                                 <color key="textColor" red="0.55294117649999996" green="0.55294117649999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_checked.png" translatesAutoresizingMaskIntoConstraints="NO" id="niC-oe-YzR">
+                                <rect key="frame" x="292" y="8" width="20" height="14"/>
+                            </imageView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Cmh-Da-vXS" firstAttribute="leading" secondItem="IqB-OM-A5P" secondAttribute="leading" id="572-nB-cU7"/>
                             <constraint firstAttribute="trailing" secondItem="aUb-hG-0Cj" secondAttribute="trailing" id="Bez-nl-uVn"/>
                             <constraint firstItem="aUb-hG-0Cj" firstAttribute="leading" secondItem="Cmh-Da-vXS" secondAttribute="trailing" constant="8" id="LEr-4R-wYw"/>
                             <constraint firstAttribute="trailing" secondItem="5yc-ED-ljg" secondAttribute="trailing" constant="8" id="O5q-m4-rEp"/>
+                            <constraint firstAttribute="trailing" secondItem="niC-oe-YzR" secondAttribute="trailing" constant="8" id="Ovs-Fb-IMl"/>
                             <constraint firstAttribute="bottom" secondItem="Cmh-Da-vXS" secondAttribute="bottom" id="RAp-GE-3hH"/>
                             <constraint firstItem="aUb-hG-0Cj" firstAttribute="top" secondItem="IqB-OM-A5P" secondAttribute="top" id="XV3-9q-SS3"/>
                             <constraint firstAttribute="bottom" secondItem="5yc-ED-ljg" secondAttribute="bottom" id="c9P-lK-9Aw"/>
+                            <constraint firstItem="niC-oe-YzR" firstAttribute="top" secondItem="IqB-OM-A5P" secondAttribute="top" constant="8" id="fWE-m5-jHp"/>
                             <constraint firstItem="Cmh-Da-vXS" firstAttribute="top" secondItem="IqB-OM-A5P" secondAttribute="top" id="iaL-cz-xiu"/>
                         </constraints>
                     </view>
@@ -61,6 +66,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkView" destination="niC-oe-YzR" id="zol-ym-uWF"/>
                 <outlet property="createTimeView" destination="5yc-ED-ljg" id="N4D-Wx-hsw"/>
                 <outlet property="tagColorView" destination="Cmh-Da-vXS" id="Ug9-MP-o5y"/>
                 <outlet property="titleView" destination="aUb-hG-0Cj" id="XyG-Lt-qzo"/>
@@ -68,4 +74,7 @@
             <point key="canvasLocation" x="163" y="338.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icon_checked.png" width="20" height="14"/>
+    </resources>
 </document>
