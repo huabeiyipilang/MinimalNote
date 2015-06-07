@@ -70,6 +70,11 @@
     [self updateTagView];
     UITapGestureRecognizer* tagTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTagClick)];
     [_tagContrainer addGestureRecognizer:tagTapGesture];
+    
+    UITapGestureRecognizer* blackTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBlackTap:)];
+    blackTapGesture.delegate = self;
+    blackTapGesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:blackTapGesture];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -168,6 +173,12 @@
     }
 }
 
+- (void)onBlackTap:(UITapGestureRecognizer *)gestureRecognizer{
+    if (!_tagTableView.hidden) {
+        [self showTags:NO];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DetailTagViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"tag_cell"];
@@ -191,5 +202,14 @@
     [self updateTagView];
 }
 
+//#pragma mark - UIGestureRecognizerDelegate
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+//{
+//    NSLog(@"touch view: %@", NSStringFromClass([touch.view class]));
+//    if ([touch.view isDescendantOfView:_tagTableView]) {
+//        return NO;
+//    }
+//    return  YES;
+//}
 
 @end

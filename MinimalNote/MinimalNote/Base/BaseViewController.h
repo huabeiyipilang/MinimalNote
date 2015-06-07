@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController : UIViewController
+
+- (void)presentController:(UIViewController*)controller;
+- (IBAction)dismissController;
 - (void)openController:(UIViewController*)controller;
 - (void)openWithStoryboardId:(NSString*)identifier;
 - (IBAction)closeController;
+- (BOOL)isVisible;
 @end

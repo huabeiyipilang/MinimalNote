@@ -24,6 +24,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)presentController:(UIViewController*)controller{
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)dismissController{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)openController:(UIViewController*)controller{
     [self.navigationController pushViewController:controller animated:YES];
 }
@@ -35,6 +43,10 @@
 
 - (IBAction)closeController{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)isVisible{
+    return self.isViewLoaded && self.view.window;
 }
 
 @end

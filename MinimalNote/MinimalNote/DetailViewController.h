@@ -10,6 +10,6 @@
 #import "Note.h"
 #import "BaseHeader.h"
 
-@interface DetailViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
+@interface DetailViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 - (void)showNote:(Note*)note;
 @end

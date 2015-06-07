@@ -123,6 +123,7 @@
             [controller setTag:[tags objectAtIndex:index]];
         }
         [self openController:controller];
+//        [self presentController:controller];
     }
 }
 

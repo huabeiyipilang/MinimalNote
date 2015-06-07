@@ -10,6 +10,6 @@
 #import "Tag.h"
 #import "BaseHeader.h"
 
-@interface AddTagController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
+@interface AddTagController : BaseViewController<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate>
 - (void)setTag:(Tag*) tag;
 @end

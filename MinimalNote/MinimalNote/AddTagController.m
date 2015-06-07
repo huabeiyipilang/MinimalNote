@@ -20,6 +20,7 @@
     TagViewCell* tagView;
     int mode;
     NSArray* colors;
+    UITapGestureRecognizer *blackTapGesture;
 }
 @property (strong, nonatomic) IBOutlet UILabel *titleView;
 @property (strong, nonatomic) IBOutlet UITextField *tagTitleView;
@@ -36,6 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     [self loadTempView];
     [self loadColors];
     mode = mTag ? MODE_EDIT : MODE_NEW;
@@ -49,16 +52,29 @@
     }
     
     _tagTitleView.text = mTag.name;
+    _tagTitleView.delegate = self;
     _tagColorView.backgroundColor = [UIColor colorWithHexString:mTag.color];
     [tagView bindData:mTag];
     _colorsTableView.dataSource = self;
     _colorsTableView.delegate = self;
+    _colorsTableView.userInteractionEnabled = YES;
     [_tagColorView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onColorViewClick:)]];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+//    self.view.userInteractionEnabled = YES;
+//    blackTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBlackTap:)];
+//    blackTapGesture.delegate = self;
+//    blackTapGesture.numberOfTapsRequired = 1;
+//    [self.view addGestureRecognizer:blackTapGesture];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    [_titleView resignFirstResponder];
+    [_tagTitleView resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,18 +145,30 @@
 
 - (void)onClose{
     [_tagTitleView resignFirstResponder];
+//    [self dismissController];
     [self closeController];
 }
 
 - (void)onColorViewClick:(id)sender{
     [_tagTitleView resignFirstResponder];
-    if (_colorsTableView.hidden) {
+    [self showColorsTable:_colorsTableView.hidden];
+}
+
+- (void)showColorsTable:(BOOL)show{
+    if (show) {
         [_colorsTableView reloadData];
         _colorsTableView.hidden = NO;
         _colorArrowView.image = [UIImage imageNamed:@"arrow_up"];
     }else{
         _colorsTableView.hidden = YES;
         _colorArrowView.image = [UIImage imageNamed:@"arrow_down"];
+    }
+}
+
+- (void)onBlackTap:(UITapGestureRecognizer *)gestureRecognizer{
+    [_tagTitleView resignFirstResponder];
+    if (!_colorsTableView.hidden) {
+        [self showColorsTable:NO];
     }
 }
 
@@ -162,5 +190,20 @@
     [self onColorViewClick:nil];
 }
 
+//#pragma mark - UIGestureRecognizerDelegate
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+//{
+//    NSLog(@"touch view: %@", NSStringFromClass([touch.view class]));
+//    if ([touch.view isDescendantOfView:_colorsTableView]) {
+//        return NO;
+//    }
+//    return  YES;
+//}
+
+#pragma mark - UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end
