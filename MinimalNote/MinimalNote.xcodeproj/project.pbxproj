@@ -21,6 +21,7 @@
 		C38A84711B1DDB7600F74581 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C38A84701B1DDB7600F74581 /* UIView+FrameMethods.m */; };
 		C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */; };
 		C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF231AF8B48000BE2C0D /* LineTextView.m */; };
+		C3B6418F1B25772D00E56074 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6418E1B25772D00E56074 /* Logger.m */; };
 		C3C8238F1B1BF9AA009BB9BF /* GroupTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8238D1B1BF9AA009BB9BF /* GroupTitleView.m */; };
 		C3C823931B1C06A8009BB9BF /* AddTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C823921B1C06A8009BB9BF /* AddTagController.m */; };
 		C3C823951B1C0C37009BB9BF /* arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C823941B1C0C37009BB9BF /* arrow_down@2x.png */; };
@@ -79,6 +80,8 @@
 		C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C3A9EF221AF8B48000BE2C0D /* LineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTextView.h; sourceTree = "<group>"; };
 		C3A9EF231AF8B48000BE2C0D /* LineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTextView.m; sourceTree = "<group>"; };
+		C3B6418D1B25772D00E56074 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
+		C3B6418E1B25772D00E56074 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
 		C3C8238C1B1BF9AA009BB9BF /* GroupTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTitleView.h; sourceTree = "<group>"; };
 		C3C8238D1B1BF9AA009BB9BF /* GroupTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTitleView.m; sourceTree = "<group>"; };
 		C3C823911B1C06A8009BB9BF /* AddTagController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTagController.h; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				C37A723F1B15C5540071F861 /* UIColor+HexString.m */,
 				C38A846F1B1DDB7600F74581 /* UIView+FrameMethods.h */,
 				C38A84701B1DDB7600F74581 /* UIView+FrameMethods.m */,
+				C3B6418D1B25772D00E56074 /* Logger.h */,
+				C3B6418E1B25772D00E56074 /* Logger.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */,
 				C36DB20B1B1D8BEE0067CD00 /* MainNavigationController.m in Sources */,
 				C3E8DD641AF7687E00329720 /* main.m in Sources */,
+				C3B6418F1B25772D00E56074 /* Logger.m in Sources */,
 				C38A84711B1DDB7600F74581 /* UIView+FrameMethods.m in Sources */,
 				C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */,
 				C3D730701B1B449B009CE260 /* TagListController.m in Sources */,

@@ -8,6 +8,9 @@
 
 #import "NoteManager.h"
 #import "FMDatabase.h"
+#import "Logger.h"
+
+#define CLASS_DEBUG NO
 
 @implementation NoteManager{
     FMDatabase* mDatabase;
@@ -35,7 +38,7 @@
         [self excuteUpdate:tagSql];
         [self initTagData];
     }else{
-        NSLog(@"Could not open db.");
+        [self printLog:@"Could not open db."];
     }
 
     return self;
@@ -44,12 +47,12 @@
 #pragma mark - Note
 - (BOOL)addNote:(Note*) note{
     NSTimeInterval time = [NSDate date].timeIntervalSince1970;
-    NSString* sql = [NSString stringWithFormat:@"INSERT INTO Note (title, content, create_time, modify_time, tag, deleted) VALUES (\"%@\", \"%@\", %f, %f, %ld, %d)", note.title, note.content, time, time, note.tag, note.deleted? 1 : 0];
+    NSString* sql = [NSString stringWithFormat:@"INSERT INTO Note (title, content, create_time, modify_time, tag, deleted) VALUES (\"%@\", \"%@\", %f, %f, %ld, %d)", note.title, note.content, time, time, (long)note.tag, note.deleted? 1 : 0];
     return [self excuteUpdate:sql];
 }
 
 - (BOOL)updateNote:(Note*) note{
-    NSString* sql = [NSString stringWithFormat:@"update Note set title=\"%@\", content=\"%@\", modify_time=%f, tag=%ld, deleted=%d where id=%ld", note.title, note.content, [NSDate date].timeIntervalSince1970, note.tag, note.deleted ? 1 : 0, (long)note.nid];
+    NSString* sql = [NSString stringWithFormat:@"update Note set title=\"%@\", content=\"%@\", modify_time=%f, tag=%ld, deleted=%d where id=%ld", note.title, note.content, [NSDate date].timeIntervalSince1970, (long)note.tag, note.deleted ? 1 : 0, (long)note.nid];
     return [self excuteUpdate:sql];
 }
 
@@ -89,7 +92,7 @@
 }
 
 - (BOOL)updateTag:(Tag*) tag{
-    NSString* sql = [NSString stringWithFormat:@"update Tag set name=\"%@\", color=\"%@\", isdefault=%d where id=%ld", tag.name, tag.color, tag.isDefault ? 1 : 0, tag.nid];
+    NSString* sql = [NSString stringWithFormat:@"update Tag set name=\"%@\", color=\"%@\", isdefault=%d where id=%ld", tag.name, tag.color, tag.isDefault ? 1 : 0, (long)tag.nid];
     return [self excuteUpdate:sql];
 }
 
@@ -115,7 +118,7 @@
 }
 
 - (Tag*)getTagById:(NSInteger)tagId{
-    NSString* sql = [NSString stringWithFormat:@"select * from Tag where id = %ld", tagId];
+    NSString* sql = [NSString stringWithFormat:@"select * from Tag where id = %ld", (long)tagId];
     
     FMResultSet* result = [mDatabase executeQuery:sql];
     Tag* tag = nil;
@@ -177,8 +180,14 @@
 #pragma mark -
 
 - (BOOL)excuteUpdate:(NSString*)sql{
-    NSLog(sql,nil);
+    [self printLog:sql];
     return [mDatabase executeUpdate:sql];
+}
+
+- (void)printLog:(NSString*)log{
+    if (CLASS_DEBUG) {
+        [Logger log:log];
+    }
 }
 
 @end

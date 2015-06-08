@@ -16,6 +16,7 @@
     int defaultCount;
     NSMutableArray* tags;
     NoteManager* noteManager;
+    BOOL isSmallScreen;
 }
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -29,6 +30,7 @@
     noteManager = [NoteManager sharedInstance];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
+    isSmallScreen = [UIScreen mainScreen].bounds.size.width <= 320 ? YES : NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -106,7 +108,7 @@
 #pragma mark --UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(150, 30);
+    return isSmallScreen ? CGSizeMake(135, 30) : CGSizeMake(150, 30);
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

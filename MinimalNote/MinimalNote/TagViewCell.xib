@@ -22,10 +22,10 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-p2-nBI" userLabel="AddView">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RVY-p2-nBI" userLabel="AddView">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3s-07-pBb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3s-07-pBb">
                                 <rect key="frame" x="60" y="-1" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,11 +33,20 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="r3s-07-pBb" secondAttribute="centerX" id="zik-kW-RBg"/>
+                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RVY-p2-nBI" secondAttribute="trailing" id="dUb-xl-bl1"/>
+                <constraint firstAttribute="bottom" secondItem="RVY-p2-nBI" secondAttribute="bottom" id="kKj-iy-Her"/>
+                <constraint firstItem="RVY-p2-nBI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="rdt-C1-lBQ"/>
+                <constraint firstItem="RVY-p2-nBI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zOs-Yv-G6h"/>
+            </constraints>
             <size key="customSize" width="190" height="50"/>
             <connections>
                 <outlet property="addView" destination="RVY-p2-nBI" id="arr-Lf-PjP"/>

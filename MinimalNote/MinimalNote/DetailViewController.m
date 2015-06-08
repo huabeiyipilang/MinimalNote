@@ -33,6 +33,7 @@
     BOOL showTags;
     NSMutableArray* tagsArray;
     Tag* mTag;
+    CGFloat contentTextHeight;
 }
 
 - (void)viewDidLoad {
@@ -42,6 +43,8 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [MobClick beginLogPageView:@"详情页"];
+    
+    _textContentView.translatesAutoresizingMaskIntoConstraints = YES;
     
     tagsArray = [[NoteManager sharedInstance] getAllTags];
     _tagTableView.dataSource = self;
@@ -68,13 +71,24 @@
     }
     
     [self updateTagView];
+    
+    CGRect rect = _textContentView.frame;
+    contentTextHeight = self.view.frame.size.height - _navigatorView.frame.size.height;
+    rect.size.height = contentTextHeight;
+    rect.size.width = self.view.frame.size.width;
+    _textContentView.frame = rect;
+    
     UITapGestureRecognizer* tagTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTagClick)];
     [_tagContrainer addGestureRecognizer:tagTapGesture];
     
     UITapGestureRecognizer* blackTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBlackTap:)];
-    blackTapGesture.delegate = self;
+//    blackTapGesture.delegate = self;
     blackTapGesture.numberOfTapsRequired = 1;
-    [self.view addGestureRecognizer:blackTapGesture];
+    [_textContentView addGestureRecognizer:blackTapGesture];
+//    [self.view addGestureRecognizer:blackTapGesture];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -85,6 +99,8 @@
     [super viewWillDisappear:animated];
     [_textContentView resignFirstResponder];
     [MobClick endLogPageView:@"详情页"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -177,6 +193,29 @@
     if (!_tagTableView.hidden) {
         [self showTags:NO];
     }
+}
+
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    CGRect keyboardRect = [[[aNotification userInfo] objectForKey:@"UIKeyboardBoundsUserInfoKey"] CGRectValue];
+    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = _textContentView.frame;
+    frame.size.height = contentTextHeight - keyboardRect.size.height;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    _textContentView.frame = frame;
+    [UIView commitAnimations];
+}
+
+- (void)keyboardWillHide:(NSNotification *)aNotification
+{
+    NSTimeInterval animationDuration = [[[aNotification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGRect frame = _textContentView.frame;
+    frame.size.height = contentTextHeight;
+    [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    _textContentView.frame = frame;
+    [UIView commitAnimations];
 }
 
 #pragma mark - UITableViewDataSource
