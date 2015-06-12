@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Carl Li. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface Tag : NSObject
@@ -13,5 +14,7 @@
 @property NSString* name;
 @property NSString* color;
 @property BOOL isDefault;
+
+- (UIColor*) getColor;
 
 @end

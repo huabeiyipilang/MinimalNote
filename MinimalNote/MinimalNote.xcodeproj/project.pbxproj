@@ -21,6 +21,8 @@
 		C38A84711B1DDB7600F74581 /* UIView+FrameMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C38A84701B1DDB7600F74581 /* UIView+FrameMethods.m */; };
 		C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */; };
 		C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9EF231AF8B48000BE2C0D /* LineTextView.m */; };
+		C3ADE0871B297D0F0064D09F /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = C3ADE0861B297D0F0064D09F /* UIView+Shadow.m */; };
+		C3ADE08B1B29913D0064D09F /* NoteFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = C3ADE08A1B29913D0064D09F /* NoteFilter.m */; };
 		C3B6418F1B25772D00E56074 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6418E1B25772D00E56074 /* Logger.m */; };
 		C3C8238F1B1BF9AA009BB9BF /* GroupTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8238D1B1BF9AA009BB9BF /* GroupTitleView.m */; };
 		C3C823931B1C06A8009BB9BF /* AddTagController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C823921B1C06A8009BB9BF /* AddTagController.m */; };
@@ -49,6 +51,18 @@
 		C3E8DD721AF7687E00329720 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E8DD701AF7687E00329720 /* LaunchScreen.xib */; };
 		C3E8DD8B1AF777C900329720 /* NoteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E8DD8A1AF777C900329720 /* NoteManager.m */; };
 		C3E8DD8D1AF77A3D00329720 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3E8DD8C1AF77A3D00329720 /* libsqlite3.dylib */; };
+		C3E915E01B27DBCD00DDD285 /* FileOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915DB1B27DBCD00DDD285 /* FileOwner.m */; };
+		C3E915E11B27DBCD00DDD285 /* SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915DD1B27DBCD00DDD285 /* SubView.m */; };
+		C3E915E21B27DBCD00DDD285 /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915DF1B27DBCD00DDD285 /* UIView+Ext.m */; };
+		C3E915EB1B27E6B100DDD285 /* DropDownTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915EA1B27E6B100DDD285 /* DropDownTitleView.m */; };
+		C3E915ED1B27E6C200DDD285 /* DropDownTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E915EC1B27E6C200DDD285 /* DropDownTitleView.xib */; };
+		C3E915F31B28241C00DDD285 /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915F21B28241C00DDD285 /* DXPopover.m */; };
+		C3E915F91B28260C00DDD285 /* NoteFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915F81B28260C00DDD285 /* NoteFilterView.m */; };
+		C3E915FB1B28262000DDD285 /* NoteFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E915FA1B28262000DDD285 /* NoteFilterView.xib */; };
+		C3E915FF1B2829F400DDD285 /* NoteFilterCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E915FD1B2829F400DDD285 /* NoteFilterCategoryCell.m */; };
+		C3E916001B2829F400DDD285 /* NoteFilterCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E915FE1B2829F400DDD285 /* NoteFilterCategoryCell.xib */; };
+		C3E916051B282A7F00DDD285 /* icon_trash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E916031B282A7F00DDD285 /* icon_trash@2x.png */; };
+		C3E916071B282ACA00DDD285 /* icon_all@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E916061B282ACA00DDD285 /* icon_all@2x.png */; };
 		C3FABE381AF793A400574765 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FABE371AF793A400574765 /* Note.m */; };
 		C3FABE411AF7BCFA00574765 /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FABE3F1AF7BCFA00574765 /* NoteCell.m */; };
 		C3FABE421AF7BCFA00574765 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FABE401AF7BCFA00574765 /* NoteCell.xib */; };
@@ -82,6 +96,11 @@
 		C3A9EF201AF86FAA00BE2C0D /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C3A9EF221AF8B48000BE2C0D /* LineTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTextView.h; sourceTree = "<group>"; };
 		C3A9EF231AF8B48000BE2C0D /* LineTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTextView.m; sourceTree = "<group>"; };
+		C3ABFB7C1B2A8CE5000BC7A9 /* CommonHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonHeader.h; path = Base/CommonHeader.h; sourceTree = "<group>"; };
+		C3ADE0851B297D0F0064D09F /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		C3ADE0861B297D0F0064D09F /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+		C3ADE0891B29913D0064D09F /* NoteFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteFilter.h; sourceTree = "<group>"; };
+		C3ADE08A1B29913D0064D09F /* NoteFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteFilter.m; sourceTree = "<group>"; };
 		C3B6418D1B25772D00E56074 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
 		C3B6418E1B25772D00E56074 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logger.m; sourceTree = "<group>"; };
 		C3C8238C1B1BF9AA009BB9BF /* GroupTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupTitleView.h; sourceTree = "<group>"; };
@@ -125,6 +144,25 @@
 		C3E8DD891AF777C900329720 /* NoteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteManager.h; sourceTree = "<group>"; };
 		C3E8DD8A1AF777C900329720 /* NoteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteManager.m; sourceTree = "<group>"; };
 		C3E8DD8C1AF77A3D00329720 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C3E915DA1B27DBCD00DDD285 /* FileOwner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileOwner.h; path = Base/SubView/FileOwner.h; sourceTree = "<group>"; };
+		C3E915DB1B27DBCD00DDD285 /* FileOwner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileOwner.m; path = Base/SubView/FileOwner.m; sourceTree = "<group>"; };
+		C3E915DC1B27DBCD00DDD285 /* SubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubView.h; path = Base/SubView/SubView.h; sourceTree = "<group>"; };
+		C3E915DD1B27DBCD00DDD285 /* SubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SubView.m; path = Base/SubView/SubView.m; sourceTree = "<group>"; };
+		C3E915DE1B27DBCD00DDD285 /* UIView+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Ext.h"; path = "Base/SubView/UIView+Ext.h"; sourceTree = "<group>"; };
+		C3E915DF1B27DBCD00DDD285 /* UIView+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Ext.m"; path = "Base/SubView/UIView+Ext.m"; sourceTree = "<group>"; };
+		C3E915E91B27E6B100DDD285 /* DropDownTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownTitleView.h; sourceTree = "<group>"; };
+		C3E915EA1B27E6B100DDD285 /* DropDownTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownTitleView.m; sourceTree = "<group>"; };
+		C3E915EC1B27E6C200DDD285 /* DropDownTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DropDownTitleView.xib; sourceTree = "<group>"; };
+		C3E915F11B28241C00DDD285 /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DXPopover.h; path = Utils/DXPopover.h; sourceTree = "<group>"; };
+		C3E915F21B28241C00DDD285 /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DXPopover.m; path = Utils/DXPopover.m; sourceTree = "<group>"; };
+		C3E915F71B28260C00DDD285 /* NoteFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteFilterView.h; sourceTree = "<group>"; };
+		C3E915F81B28260C00DDD285 /* NoteFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteFilterView.m; sourceTree = "<group>"; };
+		C3E915FA1B28262000DDD285 /* NoteFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteFilterView.xib; sourceTree = "<group>"; };
+		C3E915FC1B2829F400DDD285 /* NoteFilterCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteFilterCategoryCell.h; sourceTree = "<group>"; };
+		C3E915FD1B2829F400DDD285 /* NoteFilterCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteFilterCategoryCell.m; sourceTree = "<group>"; };
+		C3E915FE1B2829F400DDD285 /* NoteFilterCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteFilterCategoryCell.xib; sourceTree = "<group>"; };
+		C3E916031B282A7F00DDD285 /* icon_trash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_trash@2x.png"; path = "images/icon_trash@2x.png"; sourceTree = "<group>"; };
+		C3E916061B282ACA00DDD285 /* icon_all@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_all@2x.png"; path = "images/icon_all@2x.png"; sourceTree = "<group>"; };
 		C3FABE361AF793A400574765 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		C3FABE371AF793A400574765 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		C3FABE3E1AF7BCFA00574765 /* NoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
@@ -158,12 +196,16 @@
 		C36DB1FD1B1D5B6C0067CD00 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C3E915D91B27DBC100DDD285 /* SubView */,
 				C36DB2031B1D5C440067CD00 /* BaseViewController.h */,
 				C36DB2041B1D5C440067CD00 /* BaseViewController.m */,
 				C36DB2061B1D5C680067CD00 /* BaseHeader.h */,
 				C36DB2071B1D5C680067CD00 /* BaseHeader.m */,
 				C36DB2091B1D8BEE0067CD00 /* MainNavigationController.h */,
 				C36DB20A1B1D8BEE0067CD00 /* MainNavigationController.m */,
+				C3ADE0851B297D0F0064D09F /* UIView+Shadow.h */,
+				C3ADE0861B297D0F0064D09F /* UIView+Shadow.m */,
+				C3ABFB7C1B2A8CE5000BC7A9 /* CommonHeader.h */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -171,6 +213,8 @@
 		C37A723D1B15C5440071F861 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C3E915F11B28241C00DDD285 /* DXPopover.h */,
+				C3E915F21B28241C00DDD285 /* DXPopover.m */,
 				C37A723E1B15C5540071F861 /* UIColor+HexString.h */,
 				C37A723F1B15C5540071F861 /* UIColor+HexString.m */,
 				C38A846F1B1DDB7600F74581 /* UIView+FrameMethods.h */,
@@ -184,6 +228,7 @@
 		C3A9EF1D1AF86F1800BE2C0D /* List */ = {
 			isa = PBXGroup;
 			children = (
+				C3E916011B2829F900DDD285 /* NoteFileterView */,
 				C3E8DD681AF7687E00329720 /* ViewController.h */,
 				C3E8DD691AF7687E00329720 /* ViewController.m */,
 				C3FABE3E1AF7BCFA00574765 /* NoteCell.h */,
@@ -192,6 +237,11 @@
 				C3D7304C1B19408E009CE260 /* AddNoteCell.h */,
 				C3D7304D1B19408E009CE260 /* AddNoteCell.m */,
 				C3D7304E1B19408E009CE260 /* AddNoteCell.xib */,
+				C3E915E91B27E6B100DDD285 /* DropDownTitleView.h */,
+				C3E915EA1B27E6B100DDD285 /* DropDownTitleView.m */,
+				C3E915EC1B27E6C200DDD285 /* DropDownTitleView.xib */,
+				C3ADE0891B29913D0064D09F /* NoteFilter.h */,
+				C3ADE08A1B29913D0064D09F /* NoteFilter.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -226,6 +276,8 @@
 		C3D7305E1B1AD5E1009CE260 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C3E916061B282ACA00DDD285 /* icon_all@2x.png */,
+				C3E916031B282A7F00DDD285 /* icon_trash@2x.png */,
 				C3635A5B1B203F9A00A36BFC /* icon_checked@2x.png */,
 				C3635A5C1B203F9A00A36BFC /* icon_unchecked@2x.png */,
 				C3C8239F1B1C46C7009BB9BF /* arrow_up@2x.png */,
@@ -326,6 +378,32 @@
 			name = ui;
 			sourceTree = "<group>";
 		};
+		C3E915D91B27DBC100DDD285 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				C3E915DA1B27DBCD00DDD285 /* FileOwner.h */,
+				C3E915DB1B27DBCD00DDD285 /* FileOwner.m */,
+				C3E915DC1B27DBCD00DDD285 /* SubView.h */,
+				C3E915DD1B27DBCD00DDD285 /* SubView.m */,
+				C3E915DE1B27DBCD00DDD285 /* UIView+Ext.h */,
+				C3E915DF1B27DBCD00DDD285 /* UIView+Ext.m */,
+			);
+			name = SubView;
+			sourceTree = "<group>";
+		};
+		C3E916011B2829F900DDD285 /* NoteFileterView */ = {
+			isa = PBXGroup;
+			children = (
+				C3E915F71B28260C00DDD285 /* NoteFilterView.h */,
+				C3E915F81B28260C00DDD285 /* NoteFilterView.m */,
+				C3E915FA1B28262000DDD285 /* NoteFilterView.xib */,
+				C3E915FC1B2829F400DDD285 /* NoteFilterCategoryCell.h */,
+				C3E915FD1B2829F400DDD285 /* NoteFilterCategoryCell.m */,
+				C3E915FE1B2829F400DDD285 /* NoteFilterCategoryCell.xib */,
+			);
+			name = NoteFileterView;
+			sourceTree = "<group>";
+		};
 		C5C6ECC1FF0C6E09AE604824 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -407,19 +485,24 @@
 			files = (
 				C3C8239B1B1C3AAF009BB9BF /* TagColors.plist in Resources */,
 				C3635A5E1B203F9A00A36BFC /* icon_unchecked@2x.png in Resources */,
+				C3E916051B282A7F00DDD285 /* icon_trash@2x.png in Resources */,
 				C3E8DD6D1AF7687E00329720 /* Main.storyboard in Resources */,
 				C3D730501B19408E009CE260 /* AddNoteCell.xib in Resources */,
+				C3E915FB1B28262000DDD285 /* NoteFilterView.xib in Resources */,
 				C3635A561B20333200A36BFC /* about.html in Resources */,
 				C3E8DD721AF7687E00329720 /* LaunchScreen.xib in Resources */,
 				C3E8DD6F1AF7687E00329720 /* Images.xcassets in Resources */,
 				C3C823951B1C0C37009BB9BF /* arrow_down@2x.png in Resources */,
 				C3D730751B1B4FF1009CE260 /* TagViewCell.xib in Resources */,
 				C3D730681B1AD8BC009CE260 /* icon_title_back_normal@2x.png in Resources */,
+				C3E915ED1B27E6C200DDD285 /* DropDownTitleView.xib in Resources */,
 				C3D7305C1B1AD526009CE260 /* SettingCell.xib in Resources */,
 				C3FABE421AF7BCFA00574765 /* NoteCell.xib in Resources */,
 				C3D7306C1B1ADF2A009CE260 /* line_title@2x.png in Resources */,
 				C3D7306A1B1AD97B009CE260 /* icon_list_more@2x.png in Resources */,
 				C3D730661B1AD635009CE260 /* icon_title_back_press@2x.png in Resources */,
+				C3E916001B2829F400DDD285 /* NoteFilterCategoryCell.xib in Resources */,
+				C3E916071B282ACA00DDD285 /* icon_all@2x.png in Resources */,
 				C3C823A01B1C46C7009BB9BF /* arrow_up@2x.png in Resources */,
 				C3635A5D1B203F9A00A36BFC /* icon_checked@2x.png in Resources */,
 			);
@@ -469,19 +552,28 @@
 				C3FABE381AF793A400574765 /* Note.m in Sources */,
 				C3A9EF241AF8B48000BE2C0D /* LineTextView.m in Sources */,
 				C3646F121B1F037600AFE868 /* DetailTagViewCell.m in Sources */,
+				C3E915E21B27DBCD00DDD285 /* UIView+Ext.m in Sources */,
 				C3FABE411AF7BCFA00574765 /* NoteCell.m in Sources */,
 				C37A72401B15C5540071F861 /* UIColor+HexString.m in Sources */,
 				C3D7304B1B193E1F009CE260 /* Tag.m in Sources */,
+				C3E915F91B28260C00DDD285 /* NoteFilterView.m in Sources */,
+				C3ADE08B1B29913D0064D09F /* NoteFilter.m in Sources */,
 				C3C8239E1B1C467B009BB9BF /* ColorCell.m in Sources */,
+				C3E915E11B27DBCD00DDD285 /* SubView.m in Sources */,
 				C3C8238F1B1BF9AA009BB9BF /* GroupTitleView.m in Sources */,
 				C3E8DD6A1AF7687E00329720 /* ViewController.m in Sources */,
+				C3E915FF1B2829F400DDD285 /* NoteFilterCategoryCell.m in Sources */,
 				C3E8DD8B1AF777C900329720 /* NoteManager.m in Sources */,
 				C3E8DD671AF7687E00329720 /* AppDelegate.m in Sources */,
 				C36DB20B1B1D8BEE0067CD00 /* MainNavigationController.m in Sources */,
+				C3ADE0871B297D0F0064D09F /* UIView+Shadow.m in Sources */,
 				C3E8DD641AF7687E00329720 /* main.m in Sources */,
+				C3E915EB1B27E6B100DDD285 /* DropDownTitleView.m in Sources */,
+				C3E915F31B28241C00DDD285 /* DXPopover.m in Sources */,
 				C3B6418F1B25772D00E56074 /* Logger.m in Sources */,
 				C38A84711B1DDB7600F74581 /* UIView+FrameMethods.m in Sources */,
 				C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */,
+				C3E915E01B27DBCD00DDD285 /* FileOwner.m in Sources */,
 				C3D730701B1B449B009CE260 /* TagListController.m in Sources */,
 				C3D7305B1B1AD526009CE260 /* SettingCell.m in Sources */,
 				C3635A5A1B20355700A36BFC /* AboutViewController.m in Sources */,

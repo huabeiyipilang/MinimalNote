@@ -7,7 +7,12 @@
 //
 
 #import "Tag.h"
+#import "UIColor+HexString.h"
 
 @implementation Tag
+
+- (UIColor*) getColor{
+    return [UIColor colorWithHexString:_color];
+}
 
 @end

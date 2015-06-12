@@ -16,6 +16,8 @@
 - (BOOL)updateNote:(Note*) note;
 - (BOOL)deleteNote:(Note*) note;
 - (NSMutableArray*)getAllNotesWithDeleted:(BOOL)all;
+- (NSMutableArray*)getNotesByTagId:(NSInteger)tagId;
+- (NSMutableArray*)getDeletedNotes;
 
 - (BOOL)addTag:(Tag*) tag;
 - (BOOL)updateTag:(Tag*) tag;

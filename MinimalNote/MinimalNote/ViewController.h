@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseHeader.h"
+#import "NoteFilterView.h"
 
-@interface ViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ViewController : BaseViewController<UITableViewDataSource, UITableViewDelegate, FilterDelegate>
 
 
 @end

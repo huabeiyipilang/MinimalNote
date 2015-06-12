@@ -71,18 +71,49 @@
     NSMutableArray* notes = [NSMutableArray new];
     Note* note = nil;
     while ([result next]) {
-        note = [Note new];
-        note.nid = [result intForColumn:@"id"];
-        note.title = [result stringForColumn:@"title"];
-        note.content = [result stringForColumn:@"content"];
-        note.create_time = [[NSDate alloc] initWithTimeIntervalSince1970:[result doubleForColumn:@"create_time"]];
-        note.modify_time = [[NSDate alloc] initWithTimeIntervalSince1970:[result doubleForColumn:@"modify_time"]];
-        note.tag = [result intForColumn:@"tag"];
-        note.deleted = [result intForColumn:@"deleted"] == 1 ? YES : NO;
+        note = [self readNoteFromResultSet:result];
         [notes addObject:note];
     }
-    
     return notes;
+}
+
+- (NSMutableArray*)getDeletedNotes{
+    NSString* sql = @"select * from note where deleted=1";
+    sql = [sql stringByAppendingString:@" ORDER BY create_time DESC"];
+    FMResultSet* result = [mDatabase executeQuery:sql];
+    NSMutableArray* notes = [NSMutableArray new];
+    Note* note = nil;
+    while ([result next]) {
+        note = [self readNoteFromResultSet:result];
+        [notes addObject:note];
+    }
+    return notes;
+}
+
+
+- (NSMutableArray*)getNotesByTagId:(NSInteger)tagId{
+    NSString* sql = [NSString stringWithFormat:@"select * from note where tag=%ld and deleted=0", (long)tagId];
+    sql = [sql stringByAppendingString:@" ORDER BY create_time DESC"];
+    FMResultSet* result = [mDatabase executeQuery:sql];
+    NSMutableArray* notes = [NSMutableArray new];
+    Note* note = nil;
+    while ([result next]) {
+        note = [self readNoteFromResultSet:result];
+        [notes addObject:note];
+    }
+    return notes;
+}
+
+- (Note*) readNoteFromResultSet:(FMResultSet*) result{
+    Note* note = [Note new];
+    note.nid = [result intForColumn:@"id"];
+    note.title = [result stringForColumn:@"title"];
+    note.content = [result stringForColumn:@"content"];
+    note.create_time = [[NSDate alloc] initWithTimeIntervalSince1970:[result doubleForColumn:@"create_time"]];
+    note.modify_time = [[NSDate alloc] initWithTimeIntervalSince1970:[result doubleForColumn:@"modify_time"]];
+    note.tag = [result intForColumn:@"tag"];
+    note.deleted = [result intForColumn:@"deleted"] == 1 ? YES : NO;
+    return note;
 }
 
 #pragma mark - Tag
