@@ -11,6 +11,7 @@
 
 @protocol FilterDelegate <NSObject>
 - (void)onFilterChanged:(NoteFilter*)filter;
+- (void)onFilterClose;
 @end
 
 @interface NoteFilterView : SubView<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>

@@ -13,16 +13,16 @@
 #import "UIColor+HexString.h"
 #import "UIView+FrameMethods.h"
 #import "DetailTagViewCell.h"
+#import "CommonHeader.h"
+#import "DropDownTitleView.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) IBOutlet UITextView *textContentView;
 @property (strong, nonatomic) IBOutlet UIButton *okButton;
 @property (strong, nonatomic) IBOutlet UIButton *editButton;
 @property (strong, nonatomic) IBOutlet UIView *navigatorView;
-@property (strong, nonatomic) IBOutlet UILabel *tagLabel;//占坑，无用
-@property (strong, nonatomic) IBOutlet UIImageView *tagArrow;//占坑，无用
-@property (strong, nonatomic) IBOutlet UIView *tagContrainer;
 @property (strong, nonatomic) IBOutlet UITableView *tagTableView;
+@property (strong, nonatomic) IBOutlet DropDownTitleView *dropTitleView;
 
 @end
 
@@ -67,7 +67,7 @@
     if (!mTag || mTag.nid == 0) {
         mTag = [Tag new];
         mTag.name = @"未分类";
-        mTag.color = @"#EFEFF4";
+        mTag.color = DEFAULT_NAVIGATOR_COLOR;
     }
     
     [self updateTagView];
@@ -79,7 +79,7 @@
     _textContentView.frame = rect;
     
     UITapGestureRecognizer* tagTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(onTagClick)];
-    [_tagContrainer addGestureRecognizer:tagTapGesture];
+    [_dropTitleView addGestureRecognizer:tagTapGesture];
     
     UITapGestureRecognizer* blackTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBlackTap:)];
 //    blackTapGesture.delegate = self;
@@ -150,26 +150,7 @@
     //导航栏颜色
     _navigatorView.backgroundColor = [UIColor colorWithHexString:mTag.color];
     
-    //重置label尺寸
-    NSStringDrawingOptions options =  NSStringDrawingUsesLineFragmentOrigin;
-    CGRect labelRect = [mTag.name boundingRectWithSize:CGSizeMake(MAXFLOAT, _tagLabel.frame.size.height) options:options attributes:@{NSFontAttributeName:_tagLabel.font} context:nil];
-    
-    CGFloat tagViewWidth = labelRect.size.width + _tagArrow.frame.size.width;
-    labelRect.origin.x = (_tagContrainer.frame.size.width - tagViewWidth)/2;
-    labelRect.origin.y = 0;
-    labelRect.size.height = _tagLabel.frame.size.height;
-    
-    tagLabelView = [[UILabel alloc] initWithFrame:labelRect];
-    tagLabelView.text = mTag.name;
-    tagLabelView.font = _tagLabel.font;
-    [_tagContrainer addSubview:tagLabelView];
-    
-    
-    CGRect arrowRect = CGRectMake(labelRect.origin.x + labelRect.size.width, 0, 25, 25);
-    tagArrowView = [[UIImageView alloc]initWithFrame:arrowRect];
-    [tagArrowView setImage:[UIImage imageNamed:@"arrow_down"]];
-    tagArrowView.contentMode = UIViewContentModeCenter;
-    [_tagContrainer addSubview:tagArrowView];
+    [_dropTitleView setTitle:mTag.name];
 }
 
 - (void)onTagClick{
@@ -187,6 +168,7 @@
         tagArrowView.image = [UIImage imageNamed:@"arrow_down"];
         _tagTableView.hidden = YES;
     }
+    [_dropTitleView setArrowDown:!show];
 }
 
 - (void)onBlackTap:(UITapGestureRecognizer *)gestureRecognizer{

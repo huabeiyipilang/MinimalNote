@@ -136,6 +136,7 @@
         filterView.delegate = self;
 //    }
     [self.view addSubview:filterView];
+    [_dropTitleView setArrowDown:NO];
 }
 
 - (void)switchEditMode:(BOOL)editable{
@@ -236,6 +237,10 @@
 - (void) onFilterChanged:(NoteFilter *)filter{
     mFilter = filter;
     [self updateTable];
+}
+
+- (void)onFilterClose{
+    [_dropTitleView setArrowDown:YES];
 }
 
 @end

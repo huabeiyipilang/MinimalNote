@@ -80,6 +80,9 @@
 }
 
 - (void)close{
+    if (_delegate) {
+        [_delegate onFilterClose];
+    }
     [self removeFromSuperview];
 }
 

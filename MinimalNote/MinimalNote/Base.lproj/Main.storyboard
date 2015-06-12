@@ -202,29 +202,9 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A3M-Na-GGs">
                                         <rect key="frame" x="0.0" y="20" width="375" height="40"/>
-                                        <subviews>
-                                            <view autoresizesSubviews="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uhI-L3-KIm">
-                                                <rect key="frame" x="55" y="8" width="265" height="25"/>
-                                                <subviews>
-                                                    <label hidden="YES" autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="未分类" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkY-R5-gq1">
-                                                        <rect key="frame" x="94" y="0.0" width="59" height="25"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView hidden="YES" autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="cOg-H7-Avt">
-                                                        <rect key="frame" x="147" y="0.0" width="25" height="25"/>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            </view>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="uhI-L3-KIm" secondAttribute="centerX" id="fvH-hT-n3F"/>
-                                            <constraint firstAttribute="centerY" secondItem="uhI-L3-KIm" secondAttribute="centerY" id="lVp-lx-m6h"/>
-                                        </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuX-db-Qfb" userLabel="返回">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IuX-db-Qfb" userLabel="返回">
                                         <rect key="frame" x="8" y="34" width="30" height="15"/>
                                         <state key="normal" image="icon_title_back_normal.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -234,7 +214,7 @@
                                             <action selector="closeController" destination="m0L-40-7vp" eventType="touchUpInside" id="o4Z-4A-erk"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-WY-Fk8">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esN-WY-Fk8">
                                         <rect key="frame" x="337" y="27" width="30" height="30"/>
                                         <state key="normal" title="确定">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -243,7 +223,7 @@
                                             <action selector="okClicked:" destination="m0L-40-7vp" eventType="touchUpInside" id="qN1-do-Ffb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIT-zu-hOF" userLabel="编辑">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIT-zu-hOF" userLabel="编辑">
                                         <rect key="frame" x="337" y="27" width="30" height="30"/>
                                         <state key="normal" title="编辑">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,6 +235,9 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="line_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-pa-BPl">
                                         <rect key="frame" x="0.0" y="59" width="375" height="1"/>
                                     </imageView>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hL-0q-3uv" customClass="DropDownTitleView">
+                                        <rect key="frame" x="80" y="27" width="215" height="25"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -263,6 +246,9 @@
                                     <constraint firstAttribute="trailing" secondItem="esN-WY-Fk8" secondAttribute="trailing" constant="8" id="P4n-nz-B7p"/>
                                     <constraint firstAttribute="trailing" secondItem="BIT-zu-hOF" secondAttribute="trailing" constant="8" id="Trl-FQ-jAe"/>
                                     <constraint firstItem="A3M-Na-GGs" firstAttribute="leading" secondItem="HrB-cR-vdv" secondAttribute="leading" id="VIH-pr-10Z"/>
+                                    <constraint firstItem="0hL-0q-3uv" firstAttribute="top" secondItem="HrB-cR-vdv" secondAttribute="top" constant="27" id="ZY4-zU-qRV"/>
+                                    <constraint firstItem="0hL-0q-3uv" firstAttribute="leading" secondItem="HrB-cR-vdv" secondAttribute="leading" constant="80" id="bem-0l-En7"/>
+                                    <constraint firstAttribute="trailing" secondItem="0hL-0q-3uv" secondAttribute="trailing" constant="80" id="ddX-re-fPh"/>
                                     <constraint firstItem="esN-WY-Fk8" firstAttribute="top" secondItem="HrB-cR-vdv" secondAttribute="top" constant="27" id="eus-JE-SDS"/>
                                     <constraint firstItem="A3M-Na-GGs" firstAttribute="top" secondItem="HrB-cR-vdv" secondAttribute="top" constant="20" id="fEn-7c-BxB"/>
                                     <constraint firstItem="IuX-db-Qfb" firstAttribute="top" secondItem="HrB-cR-vdv" secondAttribute="top" constant="32" id="faN-Hm-aiJ"/>
@@ -279,9 +265,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no"/>
                             </textView>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-Fb-UKG">
-                                <rect key="frame" x="112" y="60" width="150" height="163"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-Fb-UKG">
+                                <rect key="frame" x="87" y="60" width="200" height="163"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="30" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tag_cell" id="7Sy-lF-bNb" customClass="DetailTagViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="44"/>
@@ -312,23 +299,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pg3-Fb-UKG" firstAttribute="top" secondItem="HrB-cR-vdv" secondAttribute="bottom" id="7cH-NF-5HT"/>
+                            <constraint firstAttribute="centerX" secondItem="Pg3-Fb-UKG" secondAttribute="centerX" id="9DY-Gj-RZw"/>
                             <constraint firstItem="HrB-cR-vdv" firstAttribute="top" secondItem="WPH-Xq-g23" secondAttribute="topMargin" id="Dg6-MC-qQJ"/>
                             <constraint firstAttribute="width" secondItem="A3M-Na-GGs" secondAttribute="width" id="iEG-ba-0A3"/>
-                            <constraint firstItem="Pg3-Fb-UKG" firstAttribute="leading" secondItem="WPH-Xq-g23" secondAttribute="leadingMargin" constant="96" id="ob1-2R-vRT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pg3-Fb-UKG" secondAttribute="trailing" constant="97" id="pUB-jE-oXM"/>
+                            <constraint firstItem="Pg3-Fb-UKG" firstAttribute="top" secondItem="HrB-cR-vdv" secondAttribute="bottom" id="qmg-gu-QNB"/>
                             <constraint firstItem="HrB-cR-vdv" firstAttribute="width" secondItem="WPH-Xq-g23" secondAttribute="width" id="ryO-wP-l24"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="dropTitleView" destination="0hL-0q-3uv" id="b6b-Al-dzA"/>
                         <outlet property="editButton" destination="BIT-zu-hOF" id="FI4-Q1-j3i"/>
                         <outlet property="navigatorView" destination="HrB-cR-vdv" id="M2e-7F-rI7"/>
                         <outlet property="okButton" destination="esN-WY-Fk8" id="vjp-3e-lGc"/>
-                        <outlet property="tagArrow" destination="cOg-H7-Avt" id="l4j-hp-Ksn"/>
-                        <outlet property="tagContrainer" destination="uhI-L3-KIm" id="ZmZ-cT-kAw"/>
-                        <outlet property="tagLabel" destination="BkY-R5-gq1" id="MpZ-sl-ClG"/>
                         <outlet property="tagTableView" destination="Pg3-Fb-UKG" id="hTL-oP-993"/>
                         <outlet property="textContentView" destination="SqF-m2-fL3" id="hVa-GC-aYu"/>
                     </connections>
