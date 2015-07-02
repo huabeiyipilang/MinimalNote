@@ -46,8 +46,6 @@
     noteManager = [NoteManager sharedInstance];
     _noteTable.dataSource = self;
     _noteTable.delegate = self;
-    
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -62,6 +60,10 @@
     
     UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onDropTitleViewClick)];
     [_dropTitleView addGestureRecognizer:tapGesture];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated gestureEnable:NO];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

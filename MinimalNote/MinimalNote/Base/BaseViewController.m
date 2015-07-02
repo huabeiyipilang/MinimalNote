@@ -14,9 +14,16 @@
 
 @implementation BaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+- (void)viewDidAppear:(BOOL)animated{
+    [self viewDidAppear:animated gestureEnable:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated gestureEnable:(BOOL)gestureEnable{
+    [super viewDidAppear:animated];
+    self.navigationController.interactivePopGestureRecognizer.enabled = gestureEnable;
+    if (gestureEnable) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,6 +10,7 @@
 
 @interface BaseViewController : UIViewController
 
+- (void)viewDidAppear:(BOOL)animated gestureEnable:(BOOL)gestureEnable;
 - (void)presentController:(UIViewController*)controller;
 - (IBAction)dismissController;
 - (void)openController:(UIViewController*)controller;
