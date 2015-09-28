@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#define CELL_TYPE_NULL 0
+#define CELL_TYPE_MORE 1
+#define CELL_TYPE_SWITCH 2
+
 @interface SettingCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UILabel *titleView;
 @property (strong, nonatomic) IBOutlet UIImageView *moreView;
+@property (strong, nonatomic) IBOutlet UISwitch *switchView;
 
-- (void)showMoreView:(BOOL)show;
+- (void)setType:(NSInteger)type;
 - (void)setTitle:(NSString*)title;
 
 @end

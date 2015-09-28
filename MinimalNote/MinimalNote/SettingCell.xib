@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,8 +28,13 @@
                             <constraint firstAttribute="height" constant="13" id="Y6B-Ge-NbQ"/>
                         </constraints>
                     </imageView>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSq-xa-Zmo">
+                        <rect key="frame" x="248" y="6" width="51" height="31"/>
+                    </switch>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="RSq-xa-Zmo" secondAttribute="trailing" constant="15" id="8ji-fh-0NO"/>
+                    <constraint firstAttribute="centerY" secondItem="RSq-xa-Zmo" secondAttribute="centerY" id="9iT-bj-ScI"/>
                     <constraint firstAttribute="trailingMargin" secondItem="oec-Z2-bwY" secondAttribute="trailing" constant="15" id="9vJ-Rn-Bmr"/>
                     <constraint firstAttribute="centerY" secondItem="84t-Ac-CfL" secondAttribute="centerY" id="aSJ-ce-dqr"/>
                     <constraint firstItem="84t-Ac-CfL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nMO-cg-o7A"/>
@@ -37,6 +43,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="moreView" destination="oec-Z2-bwY" id="3dO-Va-YLY"/>
+                <outlet property="switchView" destination="RSq-xa-Zmo" id="tsG-tW-EwV"/>
                 <outlet property="titleView" destination="84t-Ac-CfL" id="3IF-01-1y1"/>
             </connections>
         </tableViewCell>

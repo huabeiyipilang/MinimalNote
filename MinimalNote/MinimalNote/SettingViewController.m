@@ -9,8 +9,12 @@
 #import "SettingViewController.h"
 #import "SettingCell.h"
 #import "TagListController.h"
+#import "PasswordManager.h"
+#import "PasswordViewController.h"
 
-@interface SettingViewController ()
+@interface SettingViewController (){
+    PasswordManager* pswManager;
+}
 @property (strong, nonatomic) IBOutlet UIButton *backButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
@@ -23,6 +27,8 @@
     
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    
+    pswManager = [PasswordManager sharedInstance];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,7 +49,7 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SettingCell" owner:self options:nil] lastObject];
     }
     [cell setTitle:[self settingTitle:indexPath]];
-    [cell showMoreView:[self settingShowMore:indexPath]];
+    [self settingInitCell:cell index:indexPath];
     return cell;
 }
 
@@ -53,6 +59,8 @@
             switch (indexPath.row) {
                 case 0:
                     return @"标签管理";
+                case 1:
+                    return @"密码锁";
             }
             break;
         case 1:
@@ -64,21 +72,27 @@
     return @"";
 }
 
-- (BOOL)settingShowMore:(NSIndexPath*)indexPath{
+- (void)settingInitCell:(SettingCell*)cell index:(NSIndexPath*)indexPath{
     switch (indexPath.section) {
         case 0:
             switch (indexPath.row) {
                 case 0:
-                    return YES;
+                    [cell setType:CELL_TYPE_MORE];
+                    return;
+                case 1:
+                    [cell setType:CELL_TYPE_SWITCH];
+                    cell.switchView.on = [pswManager hasPassword];
+                    return;
             }
             break;
         case 1:
             switch (indexPath.row) {
                 case 0:
-                    return NO;
+                    [cell setType:CELL_TYPE_NULL];
+                    return;
             }
     }
-    return NO;
+    return;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -88,7 +102,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     switch (section) {
         case 0:
-            return 1;
+            return 2;
         case 1:
             return 1;
     }
@@ -108,6 +122,11 @@
                 case 0:
                     [self openWithStoryboardId:@"tag_controller"];
                     return;
+                case 1:{
+                    PasswordViewController* controller = [self openWithStoryboardId:@"password_controller"];
+                    [controller setState:InputState];
+                    return;
+                }
             }
             break;
         case 1:
@@ -117,6 +136,10 @@
                     return;
             }
     }
+}
+
+- (void)onPasswordSettingChanged{
+    
 }
 
 @end

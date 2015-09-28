@@ -14,7 +14,7 @@
 - (void)presentController:(UIViewController*)controller;
 - (IBAction)dismissController;
 - (void)openController:(UIViewController*)controller;
-- (void)openWithStoryboardId:(NSString*)identifier;
+- (id)openWithStoryboardId:(NSString*)identifier;
 - (IBAction)closeController;
 - (BOOL)isVisible;
 @end

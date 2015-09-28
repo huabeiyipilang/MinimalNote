@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B598BE0559B759FBAF10AE5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5283EA2020802E46A41D7C9 /* libPods.a */; };
+		C337BE941B451ADD00846409 /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C337BE931B451ADD00846409 /* PasswordViewController.m */; };
+		C337BE971B45206C00846409 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C337BE961B45206C00846409 /* PasswordManager.m */; };
 		C3635A561B20333200A36BFC /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = C3635A551B20333200A36BFC /* about.html */; };
 		C3635A5A1B20355700A36BFC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3635A591B20355700A36BFC /* AboutViewController.m */; };
 		C3635A5D1B203F9A00A36BFC /* icon_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3635A5B1B203F9A00A36BFC /* icon_checked@2x.png */; };
@@ -72,6 +74,10 @@
 		649A68E34DC9CF88E6BB57C8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6AE6686FD8519C66152B8BE2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B5283EA2020802E46A41D7C9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C337BE921B451ADD00846409 /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		C337BE931B451ADD00846409 /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		C337BE951B45206C00846409 /* PasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
+		C337BE961B45206C00846409 /* PasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
 		C343689F1B26E7A500298DF1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		C3635A551B20333200A36BFC /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		C3635A581B20355700A36BFC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -184,6 +190,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C337BE911B451AAF00846409 /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				C337BE921B451ADD00846409 /* PasswordViewController.h */,
+				C337BE931B451ADD00846409 /* PasswordViewController.m */,
+				C337BE951B45206C00846409 /* PasswordManager.h */,
+				C337BE961B45206C00846409 /* PasswordManager.m */,
+			);
+			name = Password;
+			sourceTree = "<group>";
+		};
 		C3635A571B20353200A36BFC /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +279,7 @@
 		C3D730511B1ACF34009CE260 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				C337BE911B451AAF00846409 /* Password */,
 				C3635A571B20353200A36BFC /* About */,
 				C3D7306D1B1B3DB3009CE260 /* TagList */,
 				C3D730551B1AD1E7009CE260 /* SettingViewController.h */,
@@ -554,6 +572,7 @@
 				C3646F121B1F037600AFE868 /* DetailTagViewCell.m in Sources */,
 				C3E915E21B27DBCD00DDD285 /* UIView+Ext.m in Sources */,
 				C3FABE411AF7BCFA00574765 /* NoteCell.m in Sources */,
+				C337BE971B45206C00846409 /* PasswordManager.m in Sources */,
 				C37A72401B15C5540071F861 /* UIColor+HexString.m in Sources */,
 				C3D7304B1B193E1F009CE260 /* Tag.m in Sources */,
 				C3E915F91B28260C00DDD285 /* NoteFilterView.m in Sources */,
@@ -572,6 +591,7 @@
 				C3E915F31B28241C00DDD285 /* DXPopover.m in Sources */,
 				C3B6418F1B25772D00E56074 /* Logger.m in Sources */,
 				C38A84711B1DDB7600F74581 /* UIView+FrameMethods.m in Sources */,
+				C337BE941B451ADD00846409 /* PasswordViewController.m in Sources */,
 				C3A9EF211AF86FAA00BE2C0D /* DetailViewController.m in Sources */,
 				C3E915E01B27DBCD00DDD285 /* FileOwner.m in Sources */,
 				C3D730701B1B449B009CE260 /* TagListController.m in Sources */,

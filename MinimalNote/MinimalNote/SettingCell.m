@@ -17,12 +17,28 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
-- (void)showMoreView:(BOOL)show{
-    _moreView.hidden = !show;
+- (void)setType:(NSInteger)type{
+    switch (type) {
+        case CELL_TYPE_NULL:
+            _moreView.hidden = YES;
+            _switchView.hidden = YES;
+            break;
+        case CELL_TYPE_MORE:
+            _moreView.hidden = NO;
+            _switchView.hidden = YES;
+            break;
+        case CELL_TYPE_SWITCH:
+            _moreView.hidden = YES;
+            _switchView.hidden = NO;
+            break;
+            
+        default:
+            break;
+    }
 }
+
 - (void)setTitle:(NSString*)title{
     _titleView.text = title;
 }

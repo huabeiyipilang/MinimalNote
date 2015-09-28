@@ -43,9 +43,10 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)openWithStoryboardId:(NSString*)identifier{
+- (id)openWithStoryboardId:(NSString*)identifier{
     UIViewController* controller = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     [self openController:controller];
+    return controller;
 }
 
 - (IBAction)closeController{
